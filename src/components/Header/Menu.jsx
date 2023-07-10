@@ -75,7 +75,7 @@ export default function Menu() {
                 {...(!item.internal ? { target: "_blank" } : {})}
                 title={item.title || item.name}
               >
-                <h3 className="text-4xl lg:text-5xl xl:text-5xl font-semibold text-rose-900 before:content-['>'] before:ml-2 hover:before:mr-4 hover:underline hover:decoration-rose-900">
+                <h3 className="text-4xl lg:text-4xl xl:text-5xl font-semibold text-rose-900 before:content-['>'] before:ml-2 hover:before:mr-4 hover:underline hover:decoration-rose-900">
                   {item.name}
                 </h3>
               </a>
