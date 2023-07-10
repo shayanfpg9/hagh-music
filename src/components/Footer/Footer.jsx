@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-[95%] absolute bottom-4 bg-rose-100 left-1/2 -translate-x-1/2 p-4 rounded-3xl text-center text-rose-900 font-medium">
+    <footer className="w-[95%] absolute bottom-4 bg-rose-100 left-1/2 -translate-x-1/2 p-4 rounded-3xl text-center text-rose-900 font-medium -z-10">
       copyright &#169; {new Date().getFullYear()}
       <br />
       Designed by{" "}
