@@ -1,5 +1,6 @@
 import { createHashRouter } from "react-router-dom";
 import App from "./components/App";
+import ErrorElement from "./components/errorElement";
 
 export default createHashRouter([
   {
@@ -19,6 +20,6 @@ export default createHashRouter([
         path: "music/:name",
       },
     ],
-    errorElement,
+    errorElement: <App Outlet={ErrorElement} />,
   },
 ]);
