@@ -72,7 +72,7 @@ export default function Menu() {
             <li key={"menu-item-large-" + i} className="w-full">
               <a
                 href={item.path}
-                target={!item.internal && "_blank"}
+                {...(!item.internal ? { target: "_blank" } : {})}
                 title={item.title || item.name}
               >
                 <h3 className="text-2xl font-semibold text-rose-900 before:content-['>'] before:ml-2 hover:before:mr-4 hover:underline hover:decoration-rose-900">
@@ -84,19 +84,19 @@ export default function Menu() {
 
           <li className="w-2/3 flex justify-between items-center">
             {...menuItems.small.map((item, i) => (
-              <li key={"menu-item-small-" + i} className="w-1/4">
-                <a
-                  href={item.path}
-                  target={!item.internal && "_blank"}
-                  title={item.title || item.image}
-                >
-                  <img
-                    src={item.image}
-                    alt={item.title || item.image}
-                    className="mx-2 bg-white rounded-lg hover:shadow-lg shadow-rose-700"
-                  />
-                </a>
-              </li>
+              <a
+                key={"menu-item-small-" + i}
+                className="w-1/4"
+                href={item.path}
+                {...(!item.internal ? { target: "_blank" } : {})}
+                title={item.title || item.image}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title || item.image}
+                  className="mx-2 bg-white rounded-lg hover:shadow-lg shadow-rose-700"
+                />
+              </a>
             ))}
           </li>
         </menu>
