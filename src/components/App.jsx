@@ -3,10 +3,11 @@ import { useState } from "react";
 
 // Components:
 import Header from "./Header/Header";
+import Menu from "./Header/Menu";
+import Footer from "./Footer/Footer";
 
 // Contexts:
 import MenuContext from "../contexts/Menu";
-import Menu from "./Header/Menu";
 
 export default function App() {
   const [isOpen, setMenuStatus] = useState(false);
@@ -14,8 +15,9 @@ export default function App() {
   return (
     <>
       <MenuContext.Provider value={[isOpen, setMenuStatus]}>
-        <Header/>
+        <Header />
         <Menu />
+        <Footer />
       </MenuContext.Provider>
     </>
   );
