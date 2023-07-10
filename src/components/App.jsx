@@ -1,3 +1,20 @@
+// React:
+import { useState } from "react";
+
+// Components:
+import Header from "./Header";
+
+// Contexts:
+import Menu from "../contexts/Menu";
+
 export default function App() {
-  return <></>;
+  const [isOpen, setMenuStatus] = useState(false);
+
+  return (
+    <>
+      <Menu.Provider value={[isOpen, setMenuStatus]}>
+        <Header />
+      </Menu.Provider>
+    </>
+  );
 }
