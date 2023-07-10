@@ -5,6 +5,7 @@ import { useState } from "react";
 import Header from "./Header/Header";
 import Menu from "./Header/Menu";
 import Footer from "./Footer/Footer";
+import Body from "./Body/Body";
 
 // Contexts:
 import MenuContext from "../contexts/Menu";
@@ -17,6 +18,7 @@ export default function App() {
       <MenuContext.Provider value={[isOpen, setMenuStatus]}>
         <Header />
         <Menu />
+        <Body></Body>
         <Footer />
       </MenuContext.Provider>
     </>
