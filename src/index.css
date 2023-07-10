@@ -6,12 +6,16 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply bg-rose-100 bg-opacity-60;
+  }
+
   *,
   *::after,
   *::before {
     direction: rtl;
     font-family: "vazirmatn", "Roboto", sans-serif;
-    @apply transition-all ease-linear
+    @apply transition-all ease-linear;
   }
 
   .menu {
