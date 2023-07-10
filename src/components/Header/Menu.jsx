@@ -50,6 +50,9 @@ export default function Menu() {
       },
     ],
   };
+  const ItemClick = () => {
+    setState(false);
+  };
 
   return (
     <>
@@ -70,7 +73,7 @@ export default function Menu() {
       >
         <menu className="flex justify-center items-center flex-wrap h-1/2 px-[2rem]">
           {...menuItems.large.map((item, i) => (
-            <li key={"menu-item-large-" + i} className="w-full">
+            <li onClick={ItemClick} key={"menu-item-large-" + i} className="w-full">
               <Link
                 to={item.path}
                 {...(!item.internal ? { target: "_blank" } : {})}
@@ -85,7 +88,7 @@ export default function Menu() {
 
           <li className="w-2/3 flex justify-between items-center">
             {...menuItems.small.map((item, i) => (
-              <Link
+              <Link onClick={ItemClick}
                 key={"menu-item-small-" + i}
                 className="w-1/3 sm:w-2/4 lg:w-2/6 2xl:w-3/12 mx-1"
                 to={item.path}
