@@ -3,10 +3,10 @@ import { useContext } from "react";
 
 // Assets:
 import logo from "/logo.jpg";
-import { ReactComponent as MenuSvg } from "../assets/images/menu.svg";
+import { ReactComponent as MenuSvg } from "../../assets/images/menu.svg";
 
 // Contexts:
-import Menu from "../contexts/Menu";
+import Menu from "../../contexts/Menu";
 
 export default function Header() {
   const [isOpen, setState] = useContext(Menu);
