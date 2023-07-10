@@ -1,6 +1,7 @@
 import { createHashRouter } from "react-router-dom";
 import App from "./components/App";
 import ErrorElement from "./components/errorElement";
+import Landing from "./components/Pages/Landing";
 
 export default createHashRouter([
   {
@@ -9,6 +10,7 @@ export default createHashRouter([
     children: [
       {
         index: true,
+        element: <Landing />,
       },
       {
         path: "team",
