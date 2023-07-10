@@ -9,6 +9,7 @@ import Body from "./Body/Body";
 
 // Contexts:
 import MenuContext from "../contexts/Menu";
+import { Outlet } from "react-router-dom";
 
 export default function App() {
   const [isOpen, setMenuStatus] = useState(false);
@@ -18,7 +19,9 @@ export default function App() {
       <MenuContext.Provider value={[isOpen, setMenuStatus]}>
         <Header />
         <Menu />
-        <Body></Body>
+        <Body>
+          <Outlet />
+        </Body>
         <Footer />
       </MenuContext.Provider>
     </>

@@ -7,6 +7,7 @@ import { ReactComponent as MenuSvg } from "../../assets/images/menu.svg";
 
 // Contexts:
 import MenuContext from "../../contexts/Menu";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isOpen, setState] = useContext(MenuContext);
@@ -19,17 +20,17 @@ export default function Header() {
       >
         حق ادب
       </h1>
-      <a
+      <Link
         title="لوگو"
         className="absolute left-2 top-1/2 -translate-y-1/2 w-20 sm:w-28 lg:w-30 2xl:w-48"
-        href="/"
+        to="/"
       >
         <img
           className="rounded-full hover:shadow-rose-200 hover:shadow-lg"
           src={logo}
           alt="حق ادب"
         />
-      </a>
+      </Link>
       <span
         onClick={() => setState(true)}
         className={

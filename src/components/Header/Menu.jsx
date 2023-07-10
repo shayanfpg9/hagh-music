@@ -8,6 +8,7 @@ import MenuContext from "../../contexts/Menu";
 import { ReactComponent as CLoseSvg } from "../../assets/images/close.svg";
 import RubikaImage from "../../assets/images/rubika.png";
 import GithubImage from "../../assets/images/github.png";
+import { Link } from "react-router-dom";
 
 export default function Menu() {
   const [isOpen, setState] = useContext(MenuContext);
@@ -70,24 +71,24 @@ export default function Menu() {
         <menu className="flex justify-center items-center flex-wrap h-1/2 px-[2rem]">
           {...menuItems.large.map((item, i) => (
             <li key={"menu-item-large-" + i} className="w-full">
-              <a
-                href={item.path}
+              <Link
+                to={item.path}
                 {...(!item.internal ? { target: "_blank" } : {})}
                 title={item.title || item.name}
               >
                 <h3 className="text-4xl lg:text-4xl xl:text-5xl font-semibold text-rose-900 before:content-['>'] before:ml-2 hover:before:mr-4 hover:underline hover:decoration-rose-900">
                   {item.name}
                 </h3>
-              </a>
+              </Link>
             </li>
           ))}
 
           <li className="w-2/3 flex justify-between items-center">
             {...menuItems.small.map((item, i) => (
-              <a
+              <Link
                 key={"menu-item-small-" + i}
                 className="w-1/3 sm:w-2/4 lg:w-2/6 2xl:w-3/12 mx-1"
-                href={item.path}
+                to={item.path}
                 {...(!item.internal ? { target: "_blank" } : {})}
                 title={item.title || item.image}
               >
@@ -96,7 +97,7 @@ export default function Menu() {
                   alt={item.title || item.image}
                   className="bg-white rounded-3xl hover:shadow-lg shadow-rose-700"
                 />
-              </a>
+              </Link>
             ))}
           </li>
         </menu>
