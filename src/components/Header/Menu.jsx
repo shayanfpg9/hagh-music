@@ -61,7 +61,7 @@ export default function Menu() {
       ></div>
       <section
         className={
-          "h-[95%] w-2/4 bg-rose-200 bg-opacity-80 rounded-l-[5rem] fixed top-1/2 -translate-y-1/2  shadow-rose-200 duration-300 flex justify-center items-center " +
+          "h-[95%] w-[95%] sm:w-2/4 bg-rose-200 bg-opacity-60 rounded-l-[2rem] sm:rounded-l-[3rem] fixed top-1/2 -translate-y-1/2  shadow-rose-200 duration-300 flex justify-center items-center " +
           (!isOpen
             ? "translate-x-full opacity-0"
             : "translate-x-0 shadow-[1rem_0px_5rem_0px]")
@@ -75,7 +75,7 @@ export default function Menu() {
                 {...(!item.internal ? { target: "_blank" } : {})}
                 title={item.title || item.name}
               >
-                <h3 className="text-2xl font-semibold text-rose-900 before:content-['>'] before:ml-2 hover:before:mr-4 hover:underline hover:decoration-rose-900">
+                <h3 className="text-4xl lg:text-5xl xl:text-5xl font-semibold text-rose-900 before:content-['>'] before:ml-2 hover:before:mr-4 hover:underline hover:decoration-rose-900">
                   {item.name}
                 </h3>
               </a>
@@ -86,7 +86,7 @@ export default function Menu() {
             {...menuItems.small.map((item, i) => (
               <a
                 key={"menu-item-small-" + i}
-                className="w-1/4"
+                className="w-1/3 sm:w-2/4 lg:w-2/6 2xl:w-3/12 mx-1"
                 href={item.path}
                 {...(!item.internal ? { target: "_blank" } : {})}
                 title={item.title || item.image}
@@ -94,7 +94,7 @@ export default function Menu() {
                 <img
                   src={item.image}
                   alt={item.title || item.image}
-                  className="mx-2 bg-white rounded-lg hover:shadow-lg shadow-rose-700"
+                  className="bg-white rounded-3xl hover:shadow-lg shadow-rose-700"
                 />
               </a>
             ))}
