@@ -112,7 +112,7 @@ export default function Menu() {
             (!isOpen && "hidden")
           }
         >
-          <CLoseSvg className="menu stroke-rose-900" />
+          <CLoseSvg className="icon stroke-rose-900" />
         </span>
       </section>
     </>

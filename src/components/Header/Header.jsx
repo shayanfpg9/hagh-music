@@ -38,7 +38,7 @@ export default function Header() {
           (isOpen && "hidden")
         }
       >
-        {<MenuSvg className="menu stroke-rose-900" />}
+        {<MenuSvg className="icon stroke-rose-900" />}
       </span>
     </header>
   );

@@ -18,8 +18,7 @@
     @apply transition-all ease-linear;
   }
 
-  .menu {
-    fill: none;
+  .icon {
     stroke-width: 4;
     stroke-linecap: round;
     stroke-miterlimit: 10;
