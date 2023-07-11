@@ -1,5 +1,5 @@
 // React:
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 
 // Contexts:
 import MenuContext from "../../contexts/Menu";
@@ -54,11 +54,19 @@ export default function Menu() {
     setState(false);
   };
 
+  useMemo(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isOpen]);
+
   return (
     <>
       <div
         className={
-          "duration-300 " +
+          "duration-30 " +
           (isOpen &&
             "w-full h-full bg-rose-100 bg-opacity-60 absolute backdrop-blur-lg")
         }
@@ -73,7 +81,11 @@ export default function Menu() {
       >
         <menu className="flex justify-center items-center flex-wrap h-1/2 px-[2rem]">
           {...menuItems.large.map((item, i) => (
-            <li onClick={ItemClick} key={"menu-item-large-" + i} className="w-full">
+            <li
+              onClick={ItemClick}
+              key={"menu-item-large-" + i}
+              className="w-full"
+            >
               <Link
                 to={item.path}
                 {...(!item.internal ? { target: "_blank" } : {})}
@@ -88,7 +100,8 @@ export default function Menu() {
 
           <li className="w-2/3 flex justify-between items-center">
             {...menuItems.small.map((item, i) => (
-              <Link onClick={ItemClick}
+              <Link
+                onClick={ItemClick}
                 key={"menu-item-small-" + i}
                 className="w-1/3 sm:w-2/4 lg:w-2/6 2xl:w-3/12 mx-1"
                 to={item.path}
