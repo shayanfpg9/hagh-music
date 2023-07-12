@@ -31,7 +31,7 @@ import assignShortcuts from "./assignShortcuts";
 
 export default function Player() {
   const music = useContext(MusicContext);
-  
+
   const audio = useRef(new Audio(music.path));
   const first = useRef(true);
   const timelineRef = {
@@ -69,6 +69,7 @@ export default function Player() {
     }),
     share: useRef(),
     download: useRef(),
+    info: useRef(),
   };
 
   const StrokeClass = "stroke-rose-900";
@@ -83,6 +84,7 @@ export default function Player() {
     m: ButtonsRef.mute,
     "shift+s": ButtonsRef.share,
     "shift+d": ButtonsRef.download,
+    "shift+i": ButtonsRef.info,
   };
 
   const [state, dispatch] = useReducer(PlayerReducer(audio), {
@@ -237,9 +239,9 @@ export default function Player() {
   });
 
   return (
-    <section className="max-w-full min-h-1/2 bg-rose-50 rounded-3xl p-4 flex justify-center items-center flex-row flex-wrap relative">
+    <section className="max-w-full min-h-1/2 bg-rose-50 rounded-3xl p-4 flex justify-between items-center flex-row flex-wrap relative">
       <img
-        className={`w-1/2 rounded-3xl ${
+        className={`w-1/2 lg:w-1/3 rounded-3xl ${
           (state.isPlay || state.inPlay) && "animate-wiggle"
         }`}
         src={music.cover}
@@ -247,10 +249,10 @@ export default function Player() {
       />
 
       <div className="w-1/2 h-1/2 pr-4 text-center">
-        <h2 className="text-3xl sm:text-6xl">{music.name}</h2>
-        <h3 className="mt-2 text-xl sm:text-3xl">{music.singer}</h3>
+        <h2 className="text-3xl sm:text-6xl xl:text-8xl">{music.name}</h2>
+        <h3 className="mt-2 text-xl sm:text-3xl xl:text-5xl">{music.singer}</h3>
         {music.album && (
-          <h4 className="mt-2 text-sm sm:text-base">البوم: {music.album}</h4>
+          <h4 className="mt-2 text-sm sm:text-base xl:text-xl">البوم: {music.album}</h4>
         )}
       </div>
 
@@ -280,7 +282,7 @@ export default function Player() {
           <DownloadSvg className="icon small stroke-rose-900" />
         </a>
 
-        <Link to="info" className="cursor-pointer">
+        <Link ref={ButtonsRef.info} to="info" className="cursor-pointer">
           <InfoSvg className="icon small fill-rose-900" />
         </Link>
       </div>
