@@ -22,7 +22,7 @@
     stroke-width: 4;
     stroke-linecap: round;
     stroke-miterlimit: 10;
-    @apply hover:-translate-y-1 rounded-full hover:shadow-lg hover:shadow-rose-300
+    @apply hover:-translate-y-1
   }
 
   .icon.small{
