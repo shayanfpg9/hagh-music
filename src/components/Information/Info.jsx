@@ -7,14 +7,14 @@ export default function Info() {
 
   return (
     <>
-      <section className="flex mb-20">
+      <section className="flex flex-wrap mb-20">
         <img
-          className="w-1/2 sm:w-1/4 rounded-3xl inline-block"
+          className="w-full sm:w-1/4 rounded-3xl inline-block"
           src={music.cover}
           alt={music.id}
         />
 
-        <div className="w-1/2 pr-4">
+        <div className="w-full sm:w-1/2 pr-4">
           <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl my-2">
             {music.name}
           </h2>

@@ -18,7 +18,7 @@ export default function Header() {
     <header className="absolute w-11/12 h-1/6 bg-rose-100 left-1/2 -translate-x-1/2 mt-6 rounded-full flex justify-center items-center shadow-lg shadow-rose-200">
       <h1
         title={name}
-        className="text-4xl text-rose-900 font-medium sm:text-6xl lg:text-7xl 2xl:text-8xl"
+        className="text-4xl text-rose-900 font-medium sm:text-6xl lg:text-7xl 2xl:text-8xl max-sm:pl-8"
       >
         <Link to="/">{name}</Link>
       </h1>
