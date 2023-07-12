@@ -25,7 +25,7 @@ export default function Musics() {
   const navigate = useNavigate();
 
   return (
-    <section className="mb-20">
+    <section className="mb-28">
       {...musics.map((music) => (
         <section
           className="cursor-pointer w-full h-1/3 bg-rose-50 rounded-3xl p-4 flex flex-wrap max-sm:justify-center mb-4"
@@ -33,7 +33,7 @@ export default function Musics() {
         >
           <img className="w-1/2 sm:w-1/3 xl:w-1/4 rounded-3xl" src={music.cover} alt={music.id} />
 
-          <div className="max-sm:mt-4 text-rose-800 font-bold h-1/2 flex flex-wrap pr-6 max-[865px]:w-2/3">
+          <div className="max-sm:mt-4 text-rose-800 font-bold h-1/2 flex flex-wrap pr-6 w-2/3">
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-6xl">{music.name}</h2>
               <h3 className="mt-2 mr-3 text-xl sm:text-xl lg:text-3xl">{music.singer}</h3>
@@ -42,7 +42,7 @@ export default function Musics() {
               </p>
             </div>
 
-            <button className="w-full max-w-md mt-5 bg-rose-100 text-2xl p-4 rounded-2xl">
+            <button className="w-full mt-5 bg-rose-100 text-2xl p-4 rounded-2xl">
               بشنوید
             </button>
           </div>
