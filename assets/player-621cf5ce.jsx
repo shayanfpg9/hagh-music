@@ -241,7 +241,7 @@ export default function Player() {
   });
 
   return (
-    <section className="max-w-full min-h-1/2 bg-rose-50 rounded-3xl p-4 flex justify-between items-center flex-row flex-wrap relative">
+    <section className="max-w-full min-h-1/2 max-sm:pb-8 bg-rose-50 rounded-3xl p-4 flex justify-between items-center flex-row flex-wrap relative">
       <img
         className={`w-1/2 lg:w-1/3 rounded-3xl ${
           (state.isPlay || state.inPlay) && "animate-wiggle"
@@ -260,7 +260,7 @@ export default function Player() {
         )}
       </div>
 
-      <div className="w-1/4 h-auto absolute top-0 right-0  flex justify-between p-4">
+      <div className="w-1/4 h-auto absolute max-sm:-bottom-4 sm:top-0 right-0  flex justify-between p-4">
         <button
           title="m"
           onClick={() =>
