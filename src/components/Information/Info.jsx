@@ -7,7 +7,7 @@ export default function Info() {
 
   return (
     <>
-      <section className="flex">
+      <section className="flex mb-20">
         <img
           className="w-1/2 sm:w-1/4 rounded-3xl inline-block"
           src={music.cover}
@@ -30,9 +30,6 @@ export default function Info() {
         </div>
       </section>
 
-      <br />
-      <br />
-
       <Link
         to="play"
         className="w-3/4 h-20 bg-rose-200 p-4 rounded-xl absolute left-1/2 -translate-x-1/2 flex justify-center items-center hover:shadow-lg hover:shadow-rose-300 hover:-translate-y-2"
@@ -42,8 +39,7 @@ export default function Info() {
 
       <br />
       <br />
-      <br />
-      <p className="mr-6 pb-[6rem] to-rose-500">
+      <p className="mr-6 pb-[6rem] mt-20 to-rose-500">
         {music.lyrics.split("\n").map((part, i) => (
           <span key={i}>
             {part}
