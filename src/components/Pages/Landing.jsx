@@ -3,8 +3,8 @@ import Banner from "../../assets/images/banner.svg";
 
 export default function Landing() {
   return (
-    <section className="h-full flex justify-center items-center">
-      <div className="basis-3/4 text-xl text-rose-700 font-medium flex justify-center items-center flex-wrap">
+    <section className="h-full flex justify-center items-center flex-wrap">
+      <div className="basis-3/4 text-xl mb-4 xl:text-2xl text-rose-700 font-medium flex justify-center items-center flex-wrap">
         لیبل تازه تاسیس "حق ادب" در زمینه ی تولید محتوای صوتی به صورت موسیقی رپ
         فعالیت میکند این لیبل با هدف متحد کردن جوانان با استعداد ایرانی در تیر
         مال سال 1402 فعالیت خود را به صورت حرفه ای اغاز کرده است و ما امیدواریم
