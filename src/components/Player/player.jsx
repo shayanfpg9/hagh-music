@@ -123,6 +123,8 @@ export default function Player() {
     });
 
     if (first.current) {
+      document.body.appendChild(audio.current);
+
       audio.current.currentTime = localStorage.getItem(music.id) || 0;
 
       timelineRef.timeline.current.addEventListener("click", (event) => {
@@ -252,7 +254,9 @@ export default function Player() {
         <h2 className="text-3xl sm:text-6xl xl:text-8xl">{music.name}</h2>
         <h3 className="mt-2 text-xl sm:text-3xl xl:text-5xl">{music.singer}</h3>
         {music.album && (
-          <h4 className="mt-2 text-sm sm:text-base xl:text-xl">البوم: {music.album}</h4>
+          <h4 className="mt-2 text-sm sm:text-base xl:text-xl">
+            البوم: {music.album}
+          </h4>
         )}
       </div>
 
