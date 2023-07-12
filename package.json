@@ -1,5 +1,6 @@
 {
   "name": "hagh-music",
+  "homepage": "https://shayanfpg9.github.io/hagh-music",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,11 +8,13 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.25",
     "postcss-import": "^15.1.0",
     "react": "^18.2.0",
@@ -30,5 +33,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
     "vite": "^4.4.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/shayanfpg9/hagh-music.git",
+  "author": "shayanfpg9 <shayanfpg9@duck.com>",
+  "license": "MIT"
 }
