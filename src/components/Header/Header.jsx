@@ -9,16 +9,18 @@ import { ReactComponent as MenuSvg } from "../../assets/images/menu.svg";
 import MenuContext from "../../contexts/Menu";
 import { Link } from "react-router-dom";
 
+import { name } from "../../assets/config/config.json";
+
 export default function Header() {
   const [isOpen, setState] = useContext(MenuContext);
 
   return (
     <header className="absolute w-11/12 h-1/6 bg-rose-100 left-1/2 -translate-x-1/2 mt-6 rounded-full flex justify-center items-center shadow-lg shadow-rose-200">
       <h1
-        title="حق ادب"
+        title={name}
         className="text-4xl text-rose-900 font-medium sm:text-6xl lg:text-7xl 2xl:text-8xl"
       >
-        <Link to="/">حق ادب</Link>
+        <Link to="/">{name}</Link>
       </h1>
       <Link
         title="لوگو"
@@ -28,7 +30,7 @@ export default function Header() {
         <img
           className="rounded-full hover:shadow-rose-200 hover:shadow-lg"
           src={logo}
-          alt="حق ادب"
+          alt={name}
         />
       </Link>
       <span

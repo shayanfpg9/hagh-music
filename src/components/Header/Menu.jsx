@@ -6,9 +6,9 @@ import MenuContext from "../../contexts/Menu";
 
 // Assets:
 import { ReactComponent as CLoseSvg } from "../../assets/images/close.svg";
-import RubikaImage from "../../assets/images/rubika.png";
-import GithubImage from "../../assets/images/github.png";
+import GithubImage from "../../assets/images/social/github.png";
 import { Link } from "react-router-dom";
+import { social } from "../../assets/config/config.json";
 
 export default function Menu() {
   const [isOpen, setState] = useContext(MenuContext);
@@ -36,17 +36,17 @@ export default function Menu() {
     ],
 
     small: [
-      {
-        title: "ما در روبیکا",
-        image: RubikaImage,
-        path: "https://rubika.ir/joinc/CCAGEBAH0REBQSUBDDMEQBBHGNKIAWZY",
-        small: true,
-      },
+      ...social.map(
+        (prop) =>
+          (prop.icon = new URL(
+            `../../assets/images/social/${prop.name}.png`,
+            import.meta.url
+          ).href) && prop
+      ),
       {
         title: "طراح سایت",
-        image: GithubImage,
+        icon: GithubImage,
         path: "https://github.com/shayanfpg9",
-        small: true,
       },
     ],
   };
@@ -109,8 +109,8 @@ export default function Menu() {
                 title={item.title || item.image}
               >
                 <img
-                  src={item.image}
-                  alt={item.title || item.image}
+                  src={item.icon}
+                  alt={item.title || item.icon}
                   className="bg-white rounded-3xl hover:shadow-lg shadow-rose-700"
                 />
               </Link>

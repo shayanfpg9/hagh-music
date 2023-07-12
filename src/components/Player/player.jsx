@@ -280,7 +280,7 @@ export default function Player() {
         <a
           ref={ButtonsRef.download}
           href={music.path}
-          download={music.id}
+          download={music.id + `-{${location.hostname}}`}
           className="cursor-pointer"
         >
           <DownloadSvg className="icon small stroke-rose-900" />

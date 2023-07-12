@@ -1,6 +1,7 @@
 // React:
 import { useMemo, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import useConfig from "../Hooks/useConfig";
 
 // Components:
 import Header from "./Header/Header";
@@ -14,6 +15,9 @@ import MenuContext from "../contexts/Menu";
 export default function App(props) {
   const location = useLocation();
   const [isOpen, setMenuStatus] = useState(false);
+
+  
+  useConfig();
 
   useMemo(() => {
     if (
