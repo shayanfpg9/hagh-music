@@ -34,7 +34,7 @@ export default function Info() {
       <br />
 
       <Link
-        to="../"
+        to="play"
         className="w-3/4 h-20 bg-rose-200 p-4 rounded-xl absolute left-1/2 -translate-x-1/2 flex justify-center items-center hover:shadow-lg hover:shadow-rose-300 hover:-translate-y-2"
       >
         شنیدن اهنگ

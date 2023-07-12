@@ -33,11 +33,12 @@ export default createHashRouter([
         children: [
           {
             index: true,
-            element: <Player />,
-          },
-          {
-            path: "info",
             element: <Info />,
+          },
+
+          {
+            path: "play",
+            element: <Player />,
           },
         ],
       },

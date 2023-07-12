@@ -29,7 +29,7 @@ export default function Musics() {
       {...musics.map((music) => (
         <section
           className="cursor-pointer w-full h-1/3 bg-rose-50 rounded-3xl p-4 flex flex-wrap max-sm:justify-center mb-4"
-          onClick={() => navigate(`/music/${music.id}/info`)}
+          onClick={() => navigate(`/music/${music.id}`)}
         >
           <img className="w-1/2 sm:w-1/3 xl:w-1/4 rounded-3xl" src={music.cover} alt={music.id} />
 

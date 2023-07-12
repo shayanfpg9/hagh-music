@@ -286,7 +286,7 @@ export default function Player() {
           <DownloadSvg className="icon small stroke-rose-900" />
         </a>
 
-        <Link ref={ButtonsRef.info} to="info" className="cursor-pointer">
+        <Link ref={ButtonsRef.info} to="../" className="cursor-pointer">
           <InfoSvg className="icon small fill-rose-900" />
         </Link>
       </div>
