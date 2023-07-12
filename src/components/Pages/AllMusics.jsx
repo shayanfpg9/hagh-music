@@ -7,7 +7,7 @@ export function AllMusicsLoader() {
       id: obj.id,
       name: obj.name,
       singer: obj.singer,
-      cover: new URL(`${obj.root}/cover.jpg`, import.meta.url).href,
+      cover: new URL(`../../${obj.root}/cover.jpg`, import.meta.url).href,
       year: obj.year,
       keywords: obj.keywords,
       description:
@@ -31,12 +31,18 @@ export default function Musics() {
           className="cursor-pointer w-full h-1/3 bg-rose-50 rounded-3xl p-4 flex flex-wrap max-sm:justify-center mb-4"
           onClick={() => navigate(`/music/${music.id}`)}
         >
-          <img className="w-1/2 sm:w-1/3 xl:w-1/4 rounded-3xl" src={music.cover} alt={music.id} />
+          <img
+            className="w-1/2 sm:w-1/3 xl:w-1/4 rounded-3xl"
+            src={music.cover}
+            alt={music.id}
+          />
 
           <div className="max-sm:mt-4 text-rose-800 font-bold h-1/2 flex flex-wrap pr-6 w-2/3">
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-6xl">{music.name}</h2>
-              <h3 className="mt-2 mr-3 text-xl sm:text-xl lg:text-3xl">{music.singer}</h3>
+              <h3 className="mt-2 mr-3 text-xl sm:text-xl lg:text-3xl">
+                {music.singer}
+              </h3>
               <p className="mt-2 text-rose-500 text-sm sm:text-base lg:text-lg xl:text-xl">
                 {music.description}
               </p>

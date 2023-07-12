@@ -6,7 +6,7 @@ import MusicContext from "../../contexts/Music";
 export async function MusicLoader({ params }) {
   const music = musics.find((v) => v.id === params.id);
   const Url = (fileName) =>
-    new URL(`${music.root}/${fileName}`, import.meta.url).href;
+    new URL(`../../${music.root}/${fileName}`, import.meta.url).href;
   const Import = async (fileName) => (await axios.get(Url(fileName))).data;
 
   music.cover = Url("cover.jpg");
