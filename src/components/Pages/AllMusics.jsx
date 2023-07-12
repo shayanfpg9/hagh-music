@@ -32,12 +32,12 @@ export default function Musics() {
           onClick={() => navigate(`/music/${music.id}`)}
         >
           <img
-            className="w-1/2 sm:w-1/3 xl:w-1/4 rounded-3xl"
+            className="w-3/4 sm:w-1/3 xl:w-1/4 rounded-3xl"
             src={music.cover}
             alt={music.id}
           />
 
-          <div className="max-sm:mt-4 text-rose-800 font-bold h-1/2 flex flex-wrap pr-6 w-2/3">
+          <div className="max-sm:mt-4 max-sm:w-full text-rose-800 font-bold h-1/2 flex flex-wrap sm:pr-6 w-2/3">
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-6xl">{music.name}</h2>
               <h3 className="mt-2 mr-3 text-xl sm:text-xl lg:text-3xl">
