@@ -43,7 +43,7 @@ export default function Musics() {
             </div>
 
             <button className="w-full mt-5 bg-rose-100 text-2xl p-4 rounded-2xl">
-              بشنوید
+              اطلاعات بیشتر...
             </button>
           </div>
         </section>
