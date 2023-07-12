@@ -18,11 +18,11 @@ export default function Header() {
         title="حق ادب"
         className="text-4xl text-rose-900 font-medium sm:text-6xl lg:text-7xl 2xl:text-8xl"
       >
-        حق ادب
+        <Link to="/">حق ادب</Link>
       </h1>
       <Link
         title="لوگو"
-        className="absolute left-2 top-1/2 -translate-y-1/2 w-20 sm:w-28 lg:w-30 2xl:w-48"
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-24 sm:w-28 lg:w-30 2xl:w-48"
         to="/"
       >
         <img

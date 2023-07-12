@@ -7,14 +7,29 @@ export default function Info() {
 
   return (
     <>
-      <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl my-2">
-        {music.name}
-      </h2>
-      <h3 className="mr-4 ">خواننده: {music.singer}</h3>
-      <h4 className="mr-4 ">سال پخش: {music.year}</h4>
-      {music.album && <h4 className="mr-4 ">البوم: {music.album}</h4>}
-      <h5 className="mr-4 ">اهنگساز: {music.producer}</h5>
-      <h5 className="mr-4 ">طراح کاور: {music.designer}</h5>
+      <section className="flex">
+        <img
+          className="w-1/2 sm:w-1/4 rounded-3xl inline-block"
+          src={music.cover}
+          alt={music.id}
+        />
+
+        <div className="w-1/2 pr-4">
+          <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl my-2">
+            {music.name}
+          </h2>
+          <h3 className="mr-4 ">خواننده: {music.singer}</h3>
+          {music.year && <h4 className="mr-4 ">سال پخش: {music.year}</h4>}
+          {music.album && <h4 className="mr-4 ">البوم: {music.album}</h4>}
+          {music.producer && (
+            <h5 className="mr-4 ">اهنگساز: {music.producer}</h5>
+          )}
+          {music.designer && (
+            <h5 className="mr-4 ">طراح کاور: {music.designer}</h5>
+          )}
+        </div>
+      </section>
+
       <br />
       <br />
 
@@ -28,9 +43,7 @@ export default function Info() {
       <br />
       <br />
       <br />
-      <br />
-      <h5 className="mr-4 font-bold">متن:</h5>
-      <p className="mr-6 pb-[6rem]">
+      <p className="mr-6 pb-[6rem] to-rose-500">
         {music.lyrics.split("\n").map((part, i) => (
           <span key={i}>
             {part}
