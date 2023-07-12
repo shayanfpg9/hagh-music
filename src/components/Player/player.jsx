@@ -239,7 +239,7 @@ export default function Player() {
   return (
     <section className="max-w-full min-h-1/2 bg-rose-50 rounded-3xl p-4 flex justify-center items-center flex-row flex-wrap relative">
       <img
-        className={`w-1/2 rounded-3xl border- ${
+        className={`w-1/2 rounded-3xl ${
           (state.isPlay || state.inPlay) && "animate-wiggle"
         }`}
         src={music.cover}
