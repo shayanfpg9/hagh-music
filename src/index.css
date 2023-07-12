@@ -22,5 +22,18 @@
     stroke-width: 4;
     stroke-linecap: round;
     stroke-miterlimit: 10;
+    @apply hover:-translate-y-1 rounded-full hover:shadow-lg hover:shadow-rose-300
+  }
+
+  .icon.small{
+    @apply p-1 m-1 w-7 sm:m-2 sm:p-2 bg-rose-100 lg:w-14 sm:w-10 rounded-full hover:shadow-lg hover:shadow-rose-200 
+  }
+
+  .timeline .timeline-roller{
+    @apply opacity-0
+  }
+  
+  .timeline:hover .timeline-roller{
+    @apply opacity-100
   }
 }
