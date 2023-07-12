@@ -29,9 +29,9 @@ export default function App(props) {
       <MenuContext.Provider value={[isOpen, setMenuStatus]}>
         <Header />
         <Menu />
-        <Body>{props.Outlet ? <props.Outlet /> : <Outlet />}</Body>
-        <Footer />
       </MenuContext.Provider>
+      <Body>{props.Outlet ? <props.Outlet /> : <Outlet />}</Body>
+      <Footer />
     </>
   );
 }
