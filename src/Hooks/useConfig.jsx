@@ -8,6 +8,7 @@ import {
 
 import config from "../assets/config/config.json";
 import musics from "../assets/config/musics.json";
+import albums from "../assets/config/albums.json";
 
 export default function useConfig() {
   const $ = (query) => document.querySelector(query);
@@ -30,6 +31,10 @@ export default function useConfig() {
         setPage("musics");
         break;
 
+      case "/albums":
+        setPage("albums");
+        break;
+
       default:
         setPage("error");
         break;
@@ -37,6 +42,10 @@ export default function useConfig() {
 
     if (location.pathname.includes("/music/")) {
       setPage("music");
+    }
+
+    if (location.pathname.includes("/album/")) {
+      setPage("album");
     }
 
     if (isRouteErrorResponse(error)) {
@@ -69,6 +78,24 @@ export default function useConfig() {
       );
 
       $("title").innerHTML += " " + music.name;
+    }
+
+    if (page === "album" && params.album) {
+      const album = albums.find((v) => v.id === params.album);
+
+      $("meta[name=keywords]").setAttribute(
+        "content",
+        [...config.keywords, ...album?.keywords].join(", ")
+      );
+
+      $("meta[name=description]").setAttribute(
+        "content",
+        config[page].description
+          .replace(/%NAME%/g, album.name)
+          .replace(/%PRODUCER%/g, album.producer)
+      );
+
+      $("title").innerHTML += " " + album.name;
     }
 
     if (page !== "error") {

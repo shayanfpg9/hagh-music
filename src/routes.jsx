@@ -7,6 +7,8 @@ import Music, { MusicLoader } from "./components/Pages/Music";
 import Player from "./components/Player/player";
 import Info from "./components/Information/Info";
 import Musics, { AllMusicsLoader } from "./components/Pages/AllMusics";
+import Album, { AlbumLoader } from "./components/Pages/Album";
+import Albums, { AllAlbumsLoader } from "./components/Pages/Albums";
 
 export default createHashRouter([
   {
@@ -25,6 +27,16 @@ export default createHashRouter([
         path: "musics",
         loader: AllMusicsLoader,
         element: <Musics />,
+      },
+      {
+        path: "albums",
+        loader: AllAlbumsLoader,
+        element: <Albums />,
+      },
+      {
+        path: "album/:album",
+        loader: AlbumLoader,
+        element: <Album />,
       },
       {
         path: "music/:id",
