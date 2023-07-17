@@ -30,6 +30,11 @@ export default function Menu() {
         internal: true,
       },
       {
+        name: "البوم ها",
+        path: "/albums",
+        internal: true,
+      },
+      {
         name: "دونیت",
         path: "https://idpay.ir/hagh-music",
       },
