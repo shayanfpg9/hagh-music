@@ -46,11 +46,19 @@ export default function Album() {
           )}
         </div>
       </section>
-      <h3 className="w-full bg-rose-50 p-4 font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl rounded-xl my-4">
-        ترک ها:
-      </h3>
+      {album.InProgress ? (
+        <h3 className="w-full bg-rose-50 p-4 font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl rounded-xl my-4">
+          در حال ساخت...
+        </h3>
+      ) : (
+        <>
+          <h3 className="w-full bg-rose-50 p-4 font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl rounded-xl my-4">
+            ترک ها:
+          </h3>
 
-      <Musics data={AllMusicsLoader({ params: { album: album.name } })} />
+          <Musics data={AllMusicsLoader({ params: { album: album.name } })} />
+        </>
+      )}
     </div>
   );
 }
