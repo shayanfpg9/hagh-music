@@ -1,5 +1,6 @@
 import { Outlet, json, useLoaderData } from "react-router-dom";
 import musics from "../../assets/config/musics.json";
+import albums from "../../assets/config/albums.json";
 import axios from "axios";
 import MusicContext from "../../contexts/Music";
 
@@ -12,6 +13,7 @@ export async function MusicLoader({ params }) {
   music.cover = Url("cover.jpg");
   music.path = Url("song.mp3");
   music.lyrics = await Import("lyrics.txt");
+  music.albumLink = albums.find((album) => album.name === music.album).id;
 
   if (music) {
     return json(music, 200);

@@ -20,7 +20,17 @@ export default function Info() {
           </h2>
           <h3 className="mr-4 ">خواننده: {music.singer}</h3>
           {music.year && <h4 className="mr-4 ">سال پخش: {music.year}</h4>}
-          {music.album && <h4 className="mr-4 ">البوم: {music.album}</h4>}
+          {music.album && (
+            <h4 className="mr-4 py-1 ">
+              البوم:
+              <Link
+                to={"/album/" + music.albumLink}
+                className="px-1 rounded-xl bg-rose-50"
+              >
+                {music.album}
+              </Link>
+            </h4>
+          )}
           {music.producer && (
             <h5 className="mr-4 ">اهنگساز: {music.producer}</h5>
           )}
