@@ -20,6 +20,14 @@
     "title": "پخش موزیک",
     "description": "پخش موزیک %NAME% از %SINGER% در رسانه ی حق ادب"
   },
+  "albums": {
+    "title": "البوم ها",
+    "description": "تمام البوم های لیبل حق ادب"
+  },
+  "album": {
+    "title": "البوم",
+    "description": "البوم %NAME% از %PRODUCER% در رسانه ی حق ادب"
+  },
   "error": {
     "title": "ارور"
   },
