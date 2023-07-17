@@ -1,8 +1,13 @@
 import { json, useLoaderData, useNavigate } from "react-router-dom";
 import MusicsJson from "../../assets/config/musics.json";
 
-export function AllMusicsLoader() {
-  const musics = MusicsJson.reverse().map((obj) => {
+export function AllMusicsLoader({ params }) {
+  let filterd = MusicsJson;
+  if (params?.album) {
+    filterd = MusicsJson.filter((v) => v.album === params.album);
+  }
+
+  const musics = filterd.reverse().map((obj) => {
     return {
       id: obj.id,
       name: obj.name,
@@ -17,11 +22,15 @@ export function AllMusicsLoader() {
     };
   });
 
-  return json(musics, 200);
+  if (!params.album) {
+    return json(musics, 200);
+  } else {
+    return musics;
+  }
 }
 
-export default function Musics() {
-  const musics = useLoaderData();
+export default function Musics({ data }) {
+  const musics = data || useLoaderData();
   const navigate = useNavigate();
 
   return (
