@@ -27,14 +27,14 @@ export default function Albums() {
           onClick={() => navigate(`/album/${album.id}`)}
         >
           <img
-            className="w-3/4 sm:w-1/3 xl:w-1/4 rounded-3xl"
+            className="w-full sm:w-1/4 rounded-3xl inline-block border-2 border-rose-700"
             src={album.cover}
             alt={album.id}
           />
 
           <div className="max-sm:mt-4 max-sm:w-full text-rose-800 font-bold h-1/2 flex flex-wrap sm:pr-6 w-2/3">
             <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl">{album.name}</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-6xl">البوم {album.name}</h2>
 
               {album.year && (
                 <h4 className="mt-2 mr-3 text-xl sm:text-xl lg:text-3xl">
