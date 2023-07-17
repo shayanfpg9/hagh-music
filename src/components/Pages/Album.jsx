@@ -27,7 +27,7 @@ export default function Album() {
     <div className="text-rose-700 pb-24">
       <section className="flex flex-wrap mb-4 bg-rose-50 p-4 rounded-xl">
         <img
-          className="w-full sm:w-1/4 rounded-3xl inline-block border-2 border-rose-700"
+          className="w-full sm:w-1/4 max-md:flex-1 rounded-3xl inline-block border-2 border-rose-700"
           src={album.cover}
           alt={album.id}
         />
