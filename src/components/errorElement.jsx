@@ -19,7 +19,7 @@ export default function ErrorElement(props) {
   });
 
   return (
-    <section className="h-[90%] w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center bg-rose-200 bg-opacity-60 shadow-lg shadow-rose-200 rounded-3xl text-rose-600 text-2xl lg:text-3xl 2xl:text-4xl">
+    <section className="h-[90%] w-[95%] sm:w-1/2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-col text-center bg-rose-200 bg-opacity-60 shadow-lg shadow-rose-200 rounded-3xl text-rose-600 text-2xl lg:text-3xl 2xl:text-4xl">
       <h2 className="w-full text-3xl lg:text-4xl 2xl:text-5xl font-medium">
         ارور: {error.status || 500}
       </h2>
