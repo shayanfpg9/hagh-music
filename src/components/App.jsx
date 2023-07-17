@@ -12,11 +12,14 @@ import Body from "./Body/Body";
 // Contexts:
 import MenuContext from "../contexts/Menu";
 
+// Config:
+import { banner } from "../assets/config/config.json";
+import Banner from "./Body/Banner";
+
 export default function App(props) {
   const location = useLocation();
   const [isOpen, setMenuStatus] = useState(false);
 
-  
   useConfig();
 
   useMemo(() => {
@@ -26,10 +29,13 @@ export default function App(props) {
     ) {
       document.body.removeChild(document.body.getElementsByTagName("audio")[0]);
     }
+
+    setMenuStatus(false);
   }, [location]);
 
   return (
     <>
+      {banner && <Banner />}
       <MenuContext.Provider value={[isOpen, setMenuStatus]}>
         <Header />
         <Menu />
