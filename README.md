@@ -1,6 +1,6 @@
-<img src="./public/logo.jpg" alt="logo" width="200" style="border-radius:100%; position:relative; left:50%; transform: translateX(-50%); margin-bottom:1rem;"/>
+<img src="./public/logo.jpg" alt="logo" width="200"/>
 
-<h1 style="text-align:center">Hagh Music (حق موزیک):</h1>
+# Hagh Music (حق موزیک):
 
 This is a website of teenage music lable called Hagh Adab;
 with a lot of features like Music player, Albums, Banner and etc.
