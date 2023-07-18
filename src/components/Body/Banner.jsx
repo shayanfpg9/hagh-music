@@ -10,6 +10,10 @@ export default function Banner() {
 
   useMemo(() => {
     document.body.classList[isOpen ? "add" : "remove"]("overflow-hidden");
+
+    if (!isOpen) {
+      localStorage.setItem("banner", banner.id);
+    }
   }, [isOpen]);
 
   useEffect(() => {
@@ -17,8 +21,6 @@ export default function Banner() {
       first.current = false;
 
       document.body.classList[isOpen ? "add" : "remove"]("overflow-hidden");
-    } else if (isOpen) {
-      localStorage.setItem("banner", banner.id);
     }
   });
 
