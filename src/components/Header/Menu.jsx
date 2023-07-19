@@ -89,7 +89,7 @@ export default function Menu() {
             <li
               onClick={ItemClick}
               key={"menu-item-large-" + i}
-              className="w-full"
+              className="w-full py-4"
             >
               <Link
                 to={item.path}
@@ -103,7 +103,7 @@ export default function Menu() {
             </li>
           ))}
 
-          <li className="w-2/3 flex justify-between items-center">
+          <li className="w-2/3 flex justify-between items-center my-8">
             {...menuItems.small.map((item, i) => (
               <Link
                 onClick={ItemClick}
