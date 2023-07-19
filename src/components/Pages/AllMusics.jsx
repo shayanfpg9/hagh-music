@@ -1,5 +1,6 @@
 import { json, useLoaderData, useNavigate } from "react-router-dom";
 import MusicsJson from "../../assets/config/musics.json";
+import PropTypes from "prop-types";
 
 export function AllMusicsLoader({ params }) {
   let filterd = MusicsJson;
@@ -30,13 +31,15 @@ export function AllMusicsLoader({ params }) {
 }
 
 export default function Musics({ data }) {
+  // eslint-disable-next-line
   const musics = data || useLoaderData();
   const navigate = useNavigate();
 
   return (
     <section className="mb-28">
-      {...musics.map((music) => (
+      {...musics.map((music, i) => (
         <section
+          key={`music-${i}`}
           className="cursor-pointer w-full h-1/3 bg-rose-50 rounded-3xl p-4 flex flex-wrap max-sm:justify-center mb-4"
           onClick={() => navigate(`/music/${music.id}`)}
         >
@@ -66,3 +69,17 @@ export default function Musics({ data }) {
     </section>
   );
 }
+
+Musics.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      singer: PropTypes.string.isRequired,
+      cover: PropTypes.string.isRequired,
+      year: PropTypes.number.isRequired,
+      keywords: PropTypes.arrayOf(PropTypes.string),
+      description: PropTypes.string.isRequired,
+    })
+  ),
+};

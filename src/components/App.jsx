@@ -2,6 +2,7 @@
 import { useMemo, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import useConfig from "../Hooks/useConfig";
+import PropTypes from "prop-types";
 
 // Components:
 import Header from "./Header/Header";
@@ -45,3 +46,7 @@ export default function App(props) {
     </>
   );
 }
+
+App.propTypes = {
+  Outlet: PropTypes.func,
+};
