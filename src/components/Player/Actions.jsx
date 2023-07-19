@@ -1,109 +1,141 @@
-export default (audio) => (state, action) => {
+const Action = (audio) => (state, action) => {
+  let Result = {};
   switch (action.type) {
     case "play": {
       if (action.inPlay) {
-        return {
+        Result.Result = {
           ...state,
           inPlay: false,
           isPlay: true,
         };
       }
 
-      return { ...state, isPlay: true };
+      Result = { ...state, isPlay: true };
+
+      break;
     }
 
     case "pause": {
       if (action.inPlay) {
-        return {
+        Result = {
           ...state,
           inPlay: true,
           isPlay: false,
         };
       }
 
-      return { ...state, isPlay: false };
+      Result = { ...state, isPlay: false };
+
+      break;
     }
 
     case "SetPermission":
-      return { ...state, CanPlay: true };
+      Result = { ...state, CanPlay: true };
+
+      break;
 
     case "SetTime": {
       if (!action.timeupdate) {
         audio.current.currentTime = action.time;
       }
-      return { ...state, time: action.time };
+      Result = { ...state, time: action.time };
+
+      break;
     }
 
     case "forward": {
       const time = state.time + 5;
       audio.current.currentTime = time;
-      return { ...state, time };
+      Result = { ...state, time };
+
+      break;
     }
 
     case "backward": {
       const time = state.time - 5;
       audio.current.currentTime = time;
-      return { ...state, time };
+      Result = { ...state, time };
+
+      break;
     }
 
     case "volume": {
       if (action.mute) {
-        return { ...state, volume: state.volume == 0 ? 3 : 0 };
+        Result = { ...state, volume: state.volume == 0 ? 3 : 0 };
       }
 
       if (action.up) {
         switch (state.volume) {
           case 0:
-            return { ...state, volume: 1 };
+            Result = { ...state, volume: 1 };
+            break;
 
           case 1:
-            return { ...state, volume: 2 };
+            Result = { ...state, volume: 2 };
+            break;
 
           case 2:
-            return { ...state, volume: 3 };
+            Result = { ...state, volume: 3 };
+            break;
 
           default:
-            return state;
+            Result = state;
+            break;
         }
       }
 
       if (action.down) {
         switch (state.volume) {
           case 1:
-            return { ...state, volume: 0 };
+            Result = { ...state, volume: 0 };
+            break;
 
           case 2:
-            return { ...state, volume: 1 };
+            Result = { ...state, volume: 1 };
+            break;
 
           case 3:
-            return { ...state, volume: 2 };
+            Result = { ...state, volume: 2 };
+            break;
 
           default:
-            return state;
+            Result = state;
+            break;
         }
       }
 
       if (action.loop) {
         switch (state.volume) {
           case 0:
-            return { ...state, volume: 1 };
+            Result = { ...state, volume: 1 };
+            break;
 
           case 1:
-            return { ...state, volume: 2 };
+            Result = { ...state, volume: 2 };
+            break;
 
           case 2:
-            return { ...state, volume: 3 };
+            Result = { ...state, volume: 3 };
+            break;
 
           case 3:
-            return { ...state, volume: 0 };
+            Result = { ...state, volume: 0 };
+            break;
 
           default:
-            return state;
+            Result = state;
+            break;
         }
       }
+
+      break;
     }
 
     default:
       throw Error("Unknown action.");
   }
+
+  return Result;
 };
+
+export default Action;
