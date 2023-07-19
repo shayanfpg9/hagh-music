@@ -13,7 +13,10 @@ export async function MusicLoader({ params }) {
   music.cover = Url("cover.jpg");
   music.path = Url("song.mp3");
   music.lyrics = await Import("lyrics.txt");
-  music.albumLink = albums.find((album) => album.name === music.album).id;
+
+  if (music.album) {
+    music.albumLink = albums.find((album) => album.name === music.album).id;
+  }
 
   if (music) {
     return json(music, 200);

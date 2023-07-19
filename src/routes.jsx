@@ -3,7 +3,7 @@ import App from "./components/App";
 import ErrorElement from "./components/errorElement";
 import Landing from "./components/Pages/Landing";
 import Team from "./components/Pages/Team";
-import Music, { MusicLoader } from "./components/Pages/Music";
+import Music, { MusicLoader } from "./components/Pages/music";
 import Player from "./components/Player/player";
 import Info from "./components/Information/Info";
 import Musics, { AllMusicsLoader } from "./components/Pages/AllMusics";
