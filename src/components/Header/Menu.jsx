@@ -8,37 +8,12 @@ import MenuContext from "../../contexts/Menu";
 import { ReactComponent as CLoseSvg } from "../../assets/images/close.svg";
 import GithubImage from "../../assets/images/social/github.png";
 import { Link } from "react-router-dom";
-import { social } from "../../assets/config/config.json";
+import { social, menu as large } from "../../assets/config/config.json";
 
 export default function Menu() {
   const [isOpen, setState] = useContext(MenuContext);
   const menuItems = {
-    large: [
-      {
-        name: "خانه",
-        path: "/",
-        internal: true,
-      },
-      {
-        name: "اشنایی با تیم",
-        path: "/team",
-        internal: true,
-      },
-      {
-        name: "موزیک ها",
-        path: "/musics",
-        internal: true,
-      },
-      {
-        name: "البوم ها",
-        path: "/albums",
-        internal: true,
-      },
-      {
-        name: "دونیت",
-        path: "https://idpay.ir/hagh-music",
-      },
-    ],
+    large,
 
     small: [
       ...social.map(

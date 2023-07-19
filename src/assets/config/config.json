@@ -38,5 +38,31 @@
       "path": "https://rubika.ir/joinc/CCAGEBAH0REBQSUBDDMEQBBHGNKIAWZY",
       "title": "ما در روبیکا"
     }
+  ],
+  "menu": [
+    {
+      "name": "خانه",
+      "path": "/",
+      "internal": true
+    },
+    {
+      "name": "اشنایی با تیم",
+      "path": "/team",
+      "internal": true
+    },
+    {
+      "name": "موزیک ها",
+      "path": "/musics",
+      "internal": true
+    },
+    {
+      "name": "البوم ها",
+      "path": "/albums",
+      "internal": true
+    },
+    {
+      "name": "دونیت",
+      "path": "https://idpay.ir/hagh-music"
+    }
   ]
 }
