@@ -13,6 +13,7 @@ import { ReactComponent as InfoSvg } from "../../assets/images/info.svg";
 
 // Deps:
 import {
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -32,6 +33,7 @@ import assignShortcuts from "./assignShortcuts";
 export default function Player() {
   const music = useContext(MusicContext);
 
+  // Refs:
   const audio = useRef(new Audio(music.path));
   const first = useRef(true);
   const timelineRef = {
@@ -72,6 +74,7 @@ export default function Player() {
     info: useRef(),
   };
 
+  // Vars:
   const StrokeClass = "stroke-rose-900";
   const VolumeComponents = [MuteSvg, Volume1Svg, Volume2Svg, Volume3Svg];
   const Shortcuts = {
@@ -87,6 +90,7 @@ export default function Player() {
     "shift+i": ButtonsRef.info,
   };
 
+  // States:
   const [state, dispatch] = useReducer(PlayerReducer(audio), {
     CanPlay: false,
     isPlay: false,
@@ -94,29 +98,32 @@ export default function Player() {
     inPlay: false,
     volume: +localStorage.getItem("volume") || 3,
   });
-
   const [mousedown, setMouse] = useState(false);
   const [VolumeComponent, setVolumeComp] = useState(
     () => VolumeComponents[state.volume || 3]
   );
 
-  const SeekToPoint = (point) => {
-    if (point === "start") {
-      point = 0;
-    }
+  const SeekToPoint = useCallback(
+    (point) => {
+      if (point === "start") {
+        point = 0;
+      }
 
-    const time =
-      (point * audio.current.duration) /
-      timelineRef.timeline.current.getBoundingClientRect().width;
+      const time =
+        (point * audio.current.duration) /
+        timelineRef.timeline.current.getBoundingClientRect().width;
 
-    if (time >= 0 && time <= audio.current.duration) {
-      dispatch({
-        type: "SetTime",
-        time: time,
-      });
-    }
-  };
+      if (time >= 0 && time <= audio.current.duration) {
+        dispatch({
+          type: "SetTime",
+          time: time,
+        });
+      }
+    },
+    [timelineRef.timeline]
+  );
 
+  // First render functions add fix .stroke class in paths:
   useEffect(() => {
     document.querySelectorAll("path.stroke").forEach((el) => {
       el.classList.replace("stroke", StrokeClass);
@@ -154,6 +161,7 @@ export default function Player() {
     }
   });
 
+  // Can play:
   useMemo(() => {
     if (state.CanPlay) {
       if (state.isPlay) {
@@ -164,14 +172,18 @@ export default function Player() {
     }
   }, [state.isPlay, state.CanPlay]);
 
+  // OnTime change:
   useMemo(() => {
     if (!first.current) {
       localStorage.setItem(music.id, state.time);
       timelineRef.fill.current.style.width =
         (state.time / audio.current.duration) * 100 + "%";
     }
-  }, [state.time]);
 
+    // eslint-disable-next-line
+  }, [state.time, music.id]);
+
+  // Mousemove:
   useMemo(() => {
     if (mousedown) {
       document.body.classList.add("select-none");
@@ -201,8 +213,9 @@ export default function Player() {
         });
       }
     }
-  }, [mousedown]);
+  }, [mousedown, SeekToPoint, state.inPlay, timelineRef.left]);
 
+  // Volume:
   useMemo(() => {
     localStorage.setItem("volume", state.volume);
     setVolumeComp(() => VolumeComponents[state.volume]);
@@ -224,6 +237,8 @@ export default function Player() {
         audio.current.volume = 1;
         break;
     }
+
+    // eslint-disable-next-line
   }, [state.volume]);
 
   audio.current.addEventListener("canplaythrough", () => {
@@ -309,7 +324,6 @@ export default function Player() {
               }
             ></span>
           </span>
-          <span ref={timelineRef.right} className="float-right"></span>
         </div>
 
         <span
