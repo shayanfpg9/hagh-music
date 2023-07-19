@@ -1,3 +1,4 @@
 import { createContext } from "react";
 
-export default createContext();
+const MenuContext = createContext();
+export default MenuContext;

@@ -10,7 +10,7 @@ import Musics, { AllMusicsLoader } from "./components/Pages/AllMusics";
 import Album, { AlbumLoader } from "./components/Pages/Album";
 import Albums, { AllAlbumsLoader } from "./components/Pages/Albums";
 
-export default createHashRouter([
+const routes = createHashRouter([
   {
     path: "/",
     element: <App />,
@@ -58,3 +58,5 @@ export default createHashRouter([
     errorElement: <App Outlet={ErrorElement} />,
   },
 ]);
+
+export default routes;
