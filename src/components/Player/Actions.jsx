@@ -2,29 +2,17 @@ const Action = (audio) => (state, action) => {
   let Result = {};
   switch (action.type) {
     case "play": {
-      if (action.inPlay) {
-        Result.Result = {
-          ...state,
-          inPlay: false,
-          isPlay: true,
-        };
-      }
-
-      Result = { ...state, isPlay: true };
+      Result = { ...state, isPlay: true, inPlay: false };
 
       break;
     }
 
     case "pause": {
-      if (action.inPlay) {
-        Result = {
-          ...state,
-          inPlay: true,
-          isPlay: false,
-        };
-      }
-
-      Result = { ...state, isPlay: false };
+      Result = {
+        ...state,
+        isPlay: false,
+        inPlay: action.inPlay ? true : false,
+      };
 
       break;
     }
