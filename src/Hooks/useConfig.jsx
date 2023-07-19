@@ -51,7 +51,7 @@ export default function useConfig() {
     if (isRouteErrorResponse(error)) {
       setPage("error");
     }
-  }, [location]);
+  }, [location, error]);
 
   if (page) {
     $("title").innerHTML =
@@ -65,10 +65,12 @@ export default function useConfig() {
     if (page === "music" && params.id) {
       const music = musics.find((v) => v.id === params.id);
 
-      $("meta[name=keywords]").setAttribute(
-        "content",
-        [...config.keywords, ...music?.keywords].join(", ")
-      );
+      if (music.keywords) {
+        $("meta[name=keywords]").setAttribute(
+          "content",
+          [...config.keywords, ...music.keywords].join(", ")
+        );
+      }
 
       $("meta[name=description]").setAttribute(
         "content",
@@ -83,10 +85,12 @@ export default function useConfig() {
     if (page === "album" && params.album) {
       const album = albums.find((v) => v.id === params.album);
 
-      $("meta[name=keywords]").setAttribute(
-        "content",
-        [...config.keywords, ...album?.keywords].join(", ")
-      );
+      if (album.keywords) {
+        $("meta[name=keywords]").setAttribute(
+          "content",
+          [...config.keywords, ...album.keywords].join(", ")
+        );
+      }
 
       $("meta[name=description]").setAttribute(
         "content",
