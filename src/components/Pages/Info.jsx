@@ -14,7 +14,7 @@ export default function Info() {
           alt={music.id}
         />
 
-        <div className="w-full sm:w-1/2 pr-4">
+        <div className="w-full sm:w-1/2 pr-4 flex-1">
           <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl my-2">
             {music.name}
           </h2>
