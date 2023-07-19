@@ -16,8 +16,9 @@ export default function Albums() {
 
   return (
     <section className="mb-28">
-      {...albums.map((album) => (
+      {...albums.map((album, i) => (
         <section
+          key={`albums-` + i}
           className={
             "cursor-pointer w-full h-1/3 bg-rose-50 rounded-3xl p-4 flex flex-wrap max-sm:justify-center mb-4 " +
             (album.InProgress && "animate-pulse shadow-xl shadow-rose-200")
