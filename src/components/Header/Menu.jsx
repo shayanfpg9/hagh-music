@@ -73,7 +73,7 @@ export default function Menu() {
         className={
           "duration-30 " +
           (isOpen &&
-            "w-full h-full bg-rose-100 bg-opacity-60 absolute backdrop-blur-lg")
+            `w-full h-[200vh] bg-rose-100 bg-opacity-60 absolute backdrop-blur-lg`)
         }
       ></div>
       <section
