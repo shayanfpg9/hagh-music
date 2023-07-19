@@ -5,7 +5,7 @@ import Landing from "./components/Pages/Landing";
 import Team from "./components/Pages/Team";
 import Music, { MusicLoader } from "./components/Pages/music";
 import Player from "./components/Player/player";
-import Info from "./components/Information/Info";
+import Info from "./components/Pages/Info";
 import Musics, { AllMusicsLoader } from "./components/Pages/AllMusics";
 import Album, { AlbumLoader } from "./components/Pages/Album";
 import Albums, { AllAlbumsLoader } from "./components/Pages/Albums";
