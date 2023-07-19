@@ -27,9 +27,9 @@ export default function Banner() {
   return (
     isOpen && (
       <>
-        <div className="w-full h-full bg-gray-200 bg-opacity-60 absolute backdrop-blur-lg z-10"></div>
+        <div className="w-full h-[200vh] bg-gray-200 bg-opacity-60 absolute backdrop-blur-lg z-10"></div>
 
-        <section className="h-[95%] w-[95%] sm:w-3/4 bg-rose-300 bg-opacity-60 rounded-[2rem] sm:rounded-l-[3rem] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 shadow-rose-300 flex justify-center items-baseline flex-col z-20 text-4xl xl:text-5xl font-semibold text-rose-900 text-center">
+        <section className="h-[95%] w-[95%] sm:w-3/4 bg-rose-300 bg-opacity-60 rounded-[2rem] sm:rounded-l-[3rem] fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 shadow-rose-300 flex justify-center items-baseline flex-col z-20 text-4xl xl:text-5xl font-semibold text-rose-900 text-center">
           <img
             src={
               new URL(
