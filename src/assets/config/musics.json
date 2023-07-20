@@ -1,13 +1,13 @@
 [
   {
-    "id": "kabk-ho3ein",
-    "name": "کبک",
-    "root": "assets/music/kabk-ho3ein",
-    "singer": "حصین و حمید صفت",
-    "producer": "Mvmmutii",
-    "designer": "khishkar, damirchi",
-    "description": "همکاری حصین و حمید صفت در اهنگ کبک",
+    "id": "roza-mojrem",
+    "name": "روزا",
+    "root": "assets/music/roza-mojrem",
+    "singer": "مجرم",
+    "producer": "Mojrem, Arya G",
+    "designer": "Mojrem",
+    "description": "اهنگ روزا کاری از مجرم و اریا جی",
     "year": "1402",
-    "keywords": ["حصین", "حمید صفت", "کبک"]
+    "keywords": ["روزا", "اریا جی", "مجرم"]
   }
 ]
