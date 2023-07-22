@@ -2,7 +2,7 @@ import { json, useLoaderData, useNavigate } from "react-router-dom";
 import AlbumsJson from "../../assets/config/albums.json";
 
 export function AllAlbumsLoader() {
-  const albums = AlbumsJson.reverse().map((obj) => ({
+  const albums = AlbumsJson.map((obj) => ({
     ...obj,
     cover: new URL(`/src/assets/images/albums/${obj.id}.jpg`, import.meta.url),
   }));

@@ -1,16 +1,5 @@
 [
   {
-    "id": "roza-mojrem",
-    "name": "روزا",
-    "root": "assets/music/roza-mojrem",
-    "singer": "مجرم",
-    "producer": "Mojrem, Arya G",
-    "designer": "Mojrem",
-    "description": "اهنگ روزا کاری از مجرم و اریا جی",
-    "year": "1402",
-    "keywords": ["روزا", "اریا جی", "مجرم"]
-  },
-  {
     "id": "delete-mojrem",
     "name": "دیلیت",
     "root": "assets/music/delete-mojrem",
@@ -21,5 +10,16 @@
     "description": "دیلیت اثر مجرم",
     "year": "1402",
     "keywords": ["دیلیت", "مجرم"]
+  },
+  {
+    "id": "roza-mojrem",
+    "name": "روزا",
+    "root": "assets/music/roza-mojrem",
+    "singer": "مجرم",
+    "producer": "Mojrem, Arya G",
+    "designer": "Mojrem",
+    "description": "اهنگ روزا کاری از مجرم و اریا جی",
+    "year": "1402",
+    "keywords": ["روزا", "اریا جی", "مجرم"]
   }
 ]

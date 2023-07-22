@@ -8,7 +8,7 @@ export function AllMusicsLoader({ params }) {
     filterd = MusicsJson.filter((v) => v.album === params.album);
   }
 
-  const musics = filterd.reverse().map((obj) => {
+  const musics = filterd.map((obj) => {
     return {
       id: obj.id,
       name: obj.name,
