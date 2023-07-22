@@ -9,5 +9,17 @@
     "description": "اهنگ روزا کاری از مجرم و اریا جی",
     "year": "1402",
     "keywords": ["روزا", "اریا جی", "مجرم"]
+  },
+  {
+    "id": "delete-mojrem",
+    "name": "دیلیت",
+    "root": "assets/music/delete-mojrem",
+    "singer": "مجرم",
+    "producer": "11azg",
+    "designer": "Shayanfpg9",
+    "mix": "Flamein",
+    "description": "دیلیت اثر مجرم",
+    "year": "1402",
+    "keywords": ["دیلیت", "مجرم"]
   }
 ]
