@@ -10,6 +10,7 @@ import { ReactComponent as Volume3Svg } from "../../assets/images/volume-3.svg";
 import { ReactComponent as ShareSvg } from "../../assets/images/share.svg";
 import { ReactComponent as DownloadSvg } from "../../assets/images/download.svg";
 import { ReactComponent as InfoSvg } from "../../assets/images/info.svg";
+import { ReactComponent as ReplaySvg } from "../../assets/images/replay.svg";
 
 // Deps:
 import {
@@ -95,7 +96,8 @@ export default function Player() {
     CanPlay: false,
     isPlay: false,
     time: 0,
-    inPlay: false,
+    BeforeClick: false,
+    end: false,
     volume: +localStorage.getItem("volume") || 3,
   });
   const [mousedown, setMouse] = useState(false);
@@ -126,7 +128,7 @@ export default function Player() {
   // First render functions add fix .stroke class in paths:
   useEffect(() => {
     document.querySelectorAll("path.stroke").forEach((el) => {
-      el.classList.replace("stroke", StrokeClass);
+      el.classList.add(StrokeClass);
     });
 
     if (first.current) {
@@ -143,7 +145,7 @@ export default function Player() {
       timelineRef.roller.current.addEventListener("mousedown", () => {
         dispatch({
           type: "pause",
-          inPlay: true,
+          BeforeClick: state.isPlay && true,
         });
 
         setMouse(true);
@@ -164,7 +166,7 @@ export default function Player() {
   // Can play:
   useMemo(() => {
     if (state.CanPlay) {
-      if (state.isPlay) {
+      if (state.isPlay && !state.end) {
         audio.current.play();
       } else {
         audio.current.pause();
@@ -175,7 +177,7 @@ export default function Player() {
   // OnTime change:
   useMemo(() => {
     if (!first.current) {
-      localStorage.setItem(music.id, state.time);
+      localStorage.setItem(music.id, state.end ? 0 : state.time);
       timelineRef.fill.current.style.width =
         (state.time / audio.current.duration) * 100 + "%";
     }
@@ -207,13 +209,13 @@ export default function Player() {
     } else {
       document.body.classList.remove("select-none");
 
-      if (state.inPlay) {
+      if (state.BeforeClick) {
         dispatch({
           type: "play",
         });
       }
     }
-  }, [mousedown, SeekToPoint, state.inPlay, timelineRef.left]);
+  }, [mousedown, SeekToPoint, state.BeforeClick, timelineRef.left]);
 
   // Volume:
   useMemo(() => {
@@ -255,17 +257,11 @@ export default function Player() {
     });
   });
 
-  audio.current.addEventListener("ended", () => {
-    dispatch({
-      action: "pause",
-    });
-  });
-
   return (
     <section className="max-w-full min-h-1/2 max-sm:pb-8 bg-rose-50 rounded-3xl p-4 flex justify-between items-center flex-row flex-wrap relative">
       <img
         className={`w-1/2 lg:w-1/3 rounded-3xl ${
-          (state.isPlay || state.inPlay) && "animate-wiggle"
+          (state.isPlay || state.BeforeClick) && "animate-wiggle"
         }`}
         src={music.cover}
         alt={music.name}
@@ -359,13 +355,19 @@ export default function Player() {
           <button
             ref={ButtonsRef.play}
             className="mx-4 w-7 sm:w-10 lg:w-16"
-            onClick={() =>
+            onClick={(e) => {
+              e.preventDefault();
+              if (state.end) {
+                ButtonsRef.first.current.click();
+              }
               dispatch({
                 type: !state.isPlay ? "play" : "pause",
-              })
-            }
+              });
+            }}
           >
-            {!state.isPlay ? (
+            {state.end ? (
+              <ReplaySvg className={"icon bold fill-rose-900 " + StrokeClass} />
+            ) : !state.isPlay ? (
               <PlaySvg className={"icon fill-rose-900 " + StrokeClass} />
             ) : (
               <PauseSvg className={"icon stroke-[7] " + StrokeClass} />
