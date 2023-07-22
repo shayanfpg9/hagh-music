@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import {
   isRouteErrorResponse,
   useLocation,
+  useNavigate,
   useParams,
   useRouteError,
 } from "react-router-dom";
@@ -16,8 +17,15 @@ export default function useConfig() {
   const [page, setPage] = useState();
   const params = useParams();
   const error = useRouteError();
+  const navigate = useNavigate();
 
   useMemo(() => {
+    window.onkeyup = ({ key }) => {
+      if (key === "Escape") {
+        navigate(-1);
+      }
+    };
+
     switch (location.pathname) {
       case "/":
         setPage("home");
