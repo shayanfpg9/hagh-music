@@ -2,7 +2,7 @@ const Action = (audio) => (state, action) => {
   let Result = {};
   switch (action.type) {
     case "play": {
-      Result = { ...state, isPlay: true, inPlay: false };
+      Result = { ...state, isPlay: true, inPlay: false, end: false };
 
       break;
     }
@@ -12,6 +12,17 @@ const Action = (audio) => (state, action) => {
         ...state,
         isPlay: false,
         inPlay: action.inPlay ? true : false,
+      };
+
+      break;
+    }
+
+    case "end": {
+      Result = {
+        ...state,
+        isPlay: false,
+        inPlay: action.inPlay ? true : false,
+        end: true,
       };
 
       break;

@@ -10,6 +10,7 @@ import { ReactComponent as Volume3Svg } from "../../assets/images/volume-3.svg";
 import { ReactComponent as ShareSvg } from "../../assets/images/share.svg";
 import { ReactComponent as DownloadSvg } from "../../assets/images/download.svg";
 import { ReactComponent as InfoSvg } from "../../assets/images/info.svg";
+import { ReactComponent as ReplaySvg } from "../../assets/images/replay.svg";
 
 // Deps:
 import {
@@ -96,6 +97,7 @@ export default function Player() {
     isPlay: false,
     time: 0,
     inPlay: false,
+    end: false,
     volume: +localStorage.getItem("volume") || 3,
   });
   const [mousedown, setMouse] = useState(false);
@@ -119,14 +121,24 @@ export default function Player() {
           time: time,
         });
       }
+
+      CheckEnd();
     },
     [timelineRef.timeline]
   );
 
+  const CheckEnd = useCallback(() => {
+    if (state.isPlay && timelineRef.fill.current.style.width === "100%") {
+      dispatch({
+        type: "end",
+      });
+    }
+  });
+
   // First render functions add fix .stroke class in paths:
   useEffect(() => {
     document.querySelectorAll("path.stroke").forEach((el) => {
-      el.classList.replace("stroke", StrokeClass);
+      el.classList.add(StrokeClass);
     });
 
     if (first.current) {
@@ -164,7 +176,7 @@ export default function Player() {
   // Can play:
   useMemo(() => {
     if (state.CanPlay) {
-      if (state.isPlay) {
+      if (state.isPlay && !state.end) {
         audio.current.play();
       } else {
         audio.current.pause();
@@ -178,10 +190,12 @@ export default function Player() {
       localStorage.setItem(music.id, state.time);
       timelineRef.fill.current.style.width =
         (state.time / audio.current.duration) * 100 + "%";
+
+      CheckEnd();
     }
 
     // eslint-disable-next-line
-  }, [state.time, music.id]);
+  }, [state.time, music.id, CheckEnd]);
 
   // Mousemove:
   useMemo(() => {
@@ -353,13 +367,19 @@ export default function Player() {
           <button
             ref={ButtonsRef.play}
             className="mx-4 w-7 sm:w-10 lg:w-16"
-            onClick={() =>
+            onClick={(e) => {
+              e.preventDefault();
+              if (state.end) {
+                ButtonsRef.first.current.click();
+              }
               dispatch({
                 type: !state.isPlay ? "play" : "pause",
-              })
-            }
+              });
+            }}
           >
-            {!state.isPlay ? (
+            {state.end ? (
+              <ReplaySvg className={"icon bold fill-rose-900 " + StrokeClass} />
+            ) : !state.isPlay ? (
               <PlaySvg className={"icon fill-rose-900 " + StrokeClass} />
             ) : (
               <PauseSvg className={"icon stroke-[7] " + StrokeClass} />
