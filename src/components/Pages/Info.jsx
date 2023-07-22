@@ -34,6 +34,9 @@ export default function Info() {
           {music.producer && (
             <h5 className="mr-4 ">اهنگساز: {music.producer}</h5>
           )}
+          {music.mix && (
+            <h5 className="mr-4 ">میکس و مستر: {music.mix}</h5>
+          )}
           {music.designer && (
             <h5 className="mr-4 ">طراح کاور: {music.designer}</h5>
           )}
