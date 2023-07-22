@@ -1,8 +1,17 @@
 const Action = (audio) => (state, action) => {
   let Result = {};
+  const end = state.time >= audio.current.duration;
+  const EndObj = end
+    ? {
+        isPlay: false,
+        BeforeClick: action.BeforeClick ? true : false,
+        end: true,
+      }
+    : { end: false };
+
   switch (action.type) {
     case "play": {
-      Result = { ...state, isPlay: true, inPlay: false, end: false };
+      Result = { ...state, isPlay: true, BeforeClick: false, end: false };
 
       break;
     }
@@ -11,18 +20,8 @@ const Action = (audio) => (state, action) => {
       Result = {
         ...state,
         isPlay: false,
-        inPlay: action.inPlay ? true : false,
-      };
-
-      break;
-    }
-
-    case "end": {
-      Result = {
-        ...state,
-        isPlay: false,
-        inPlay: action.inPlay ? true : false,
-        end: true,
+        BeforeClick: action.BeforeClick ? true : false,
+        end: false,
       };
 
       break;
@@ -37,7 +36,12 @@ const Action = (audio) => (state, action) => {
       if (!action.timeupdate) {
         audio.current.currentTime = action.time;
       }
-      Result = { ...state, time: action.time };
+
+      Result = {
+        ...state,
+        time: action.time,
+        ...EndObj,
+      };
 
       break;
     }
@@ -45,7 +49,11 @@ const Action = (audio) => (state, action) => {
     case "forward": {
       const time = state.time + 5;
       audio.current.currentTime = time;
-      Result = { ...state, time };
+      Result = {
+        ...state,
+        time,
+        ...EndObj,
+      };
 
       break;
     }
@@ -53,7 +61,11 @@ const Action = (audio) => (state, action) => {
     case "backward": {
       const time = state.time - 5;
       audio.current.currentTime = time;
-      Result = { ...state, time };
+      Result = {
+        ...state,
+        time,
+        ...EndObj,
+      };
 
       break;
     }

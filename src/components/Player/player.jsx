@@ -96,7 +96,7 @@ export default function Player() {
     CanPlay: false,
     isPlay: false,
     time: 0,
-    inPlay: false,
+    BeforeClick: false,
     end: false,
     volume: +localStorage.getItem("volume") || 3,
   });
@@ -121,19 +121,9 @@ export default function Player() {
           time: time,
         });
       }
-
-      CheckEnd();
     },
     [timelineRef.timeline]
   );
-
-  const CheckEnd = useCallback(() => {
-    if (state.isPlay && timelineRef.fill.current.style.width === "100%") {
-      dispatch({
-        type: "end",
-      });
-    }
-  });
 
   // First render functions add fix .stroke class in paths:
   useEffect(() => {
@@ -155,7 +145,7 @@ export default function Player() {
       timelineRef.roller.current.addEventListener("mousedown", () => {
         dispatch({
           type: "pause",
-          inPlay: true,
+          BeforeClick: state.isPlay && true,
         });
 
         setMouse(true);
@@ -187,15 +177,13 @@ export default function Player() {
   // OnTime change:
   useMemo(() => {
     if (!first.current) {
-      localStorage.setItem(music.id, state.time);
+      localStorage.setItem(music.id, state.end ? 0 : state.time);
       timelineRef.fill.current.style.width =
         (state.time / audio.current.duration) * 100 + "%";
-
-      CheckEnd();
     }
 
     // eslint-disable-next-line
-  }, [state.time, music.id, CheckEnd]);
+  }, [state.time, music.id]);
 
   // Mousemove:
   useMemo(() => {
@@ -221,13 +209,13 @@ export default function Player() {
     } else {
       document.body.classList.remove("select-none");
 
-      if (state.inPlay) {
+      if (state.BeforeClick) {
         dispatch({
           type: "play",
         });
       }
     }
-  }, [mousedown, SeekToPoint, state.inPlay, timelineRef.left]);
+  }, [mousedown, SeekToPoint, state.BeforeClick, timelineRef.left]);
 
   // Volume:
   useMemo(() => {
@@ -273,7 +261,7 @@ export default function Player() {
     <section className="max-w-full min-h-1/2 max-sm:pb-8 bg-rose-50 rounded-3xl p-4 flex justify-between items-center flex-row flex-wrap relative">
       <img
         className={`w-1/2 lg:w-1/3 rounded-3xl ${
-          (state.isPlay || state.inPlay) && "animate-wiggle"
+          (state.isPlay || state.BeforeClick) && "animate-wiggle"
         }`}
         src={music.cover}
         alt={music.name}
