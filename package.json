@@ -5,11 +5,12 @@
   "version": "2.1.0",
   "type": "module",
   "scripts": {
-    "dev": "node ./upload/server && vite",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "upload": "nodemon ./upload/server"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.22.9",
@@ -18,6 +19,7 @@
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "gh-pages": "^5.0.0",
+    "nodemon": "^3.0.1",
     "postcss": "^8.4.25",
     "postcss-import": "^15.1.0",
     "react": "^18.2.0",
