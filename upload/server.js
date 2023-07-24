@@ -7,7 +7,7 @@ const PORT = 4001;
 
 // Listen:
 app.listen(PORT, () => {
-  console.log("Start uploading...");
+  console.log("\x1b[32m", "\n-> Start uploading...\n");
 });
 
 // Run:
