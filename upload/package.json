@@ -5,7 +5,7 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "dev:css": "npx tailwindcss -i styles/tailwind.css -o styles/style.css --minify",
+    "dev:css": "npx tailwindcss -i ../src/index.css -o styles/style.css --minify",
     "start": "nodemon --exec \"yarn dev:css && node server.js\""
   }
 }
