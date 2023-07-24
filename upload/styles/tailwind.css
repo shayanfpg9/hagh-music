@@ -1,0 +1,12 @@
+@import url("vazirmatn/Vazirmatn-font-face.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Roboto:wght@300&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "vazirmatn", "Roboto";
+  }
+}
