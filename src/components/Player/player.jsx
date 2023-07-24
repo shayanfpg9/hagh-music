@@ -172,7 +172,7 @@ export default function Player() {
         audio.current.pause();
       }
     }
-  }, [state.isPlay, state.CanPlay]);
+  }, [state.isPlay, state.CanPlay, state.end]);
 
   // OnTime change:
   useMemo(() => {

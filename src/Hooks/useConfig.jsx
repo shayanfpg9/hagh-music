@@ -59,7 +59,7 @@ export default function useConfig() {
     if (isRouteErrorResponse(error)) {
       setPage("error");
     }
-  }, [location, error]);
+  }, [location, error, navigate]);
 
   if (page) {
     $("title").innerHTML =
