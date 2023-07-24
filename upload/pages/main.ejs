@@ -11,7 +11,7 @@
 
 <body>
   <%- include("sections/header.ejs" , {name: config.name} ) %>
-  <main class="absolute w-[90%] min-h-[calc(100vh-(100vh/6+1.5rem+5rem))] mt-[calc(100vh/6+0.5rem)] left-1/2 -translate-x-1/2 bg-rose-200 bg-opacity-50 rounded-3xl -z-20 pt-8 pb-4 px-4"><%- include(`actions/${page}.ejs`) %></main>
+  <main class="absolute w-[90%] min-h-[calc(100vh-(100vh/6+1.5rem+5rem))] mt-[calc(100vh/6+0.5rem)] left-1/2 -translate-x-1/2 bg-rose-200 bg-opacity-50 rounded-3xl pt-8 pb-4 px-4"><%- include(`actions/${page}.ejs`) %></main>
   <%- include("sections/footer.ejs" , {version: config.version} ) %>
 </body>
 
