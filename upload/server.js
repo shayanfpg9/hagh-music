@@ -25,25 +25,25 @@ app.use(
 
 // Routes:
 app.get("/", (req, res) => {
-  res.render("index", {
+  res.render("main", {
     page: "index",
   });
 });
 
 app.get("/music", (req, res) => {
-  res.render("index", {
+  res.render("main", {
     page: "music",
   });
 });
 
 app.get("/album", (req, res) => {
-  res.render("index", {
+  res.render("main", {
     page: "album",
   });
 });
 
 app.get("/team", (req, res) => {
-  res.render("index", {
+  res.render("main", {
     page: "team",
   });
 });
