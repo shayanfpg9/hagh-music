@@ -11,6 +11,10 @@ app.listen(PORT, () => {
 });
 
 // Run:
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "./pages"));
+app.use(express.static(path.join(__dirname, "/styles")));
+
 app.use(
   fileUpload({
     limits: {
@@ -18,17 +22,30 @@ app.use(
     },
   })
 );
-app.use(
-  express.static(__dirname, {
-    extensions: ["html"],
-  })
-);
 
+// Routes:
 app.get("/", (req, res) => {
-  res.sendFile("index.html", {
-    root: path.join(__dirname),
+  res.render("index", {
+    page: "index",
   });
-  res.end();
+});
+
+app.get("/music", (req, res) => {
+  res.render("index", {
+    page: "music",
+  });
+});
+
+app.get("/album", (req, res) => {
+  res.render("index", {
+    page: "album",
+  });
+});
+
+app.get("/team", (req, res) => {
+  res.render("index", {
+    page: "team",
+  });
 });
 
 app.all("*", (req, res) => {
