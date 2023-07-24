@@ -1,0 +1,9 @@
+{
+  "verbose": false,
+  "ext": "ejs,js,css,json",
+  "watch": ["./"],
+  "ignore": ["./styles/style.css", "package.json", "nodemon.json"],
+  "execMap": {
+    "ejs": "perl"
+  }
+}

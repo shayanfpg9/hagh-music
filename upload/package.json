@@ -2,6 +2,10 @@
   "type": "commonjs",
   "name": "upload",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "dev:css": "npx tailwindcss -i styles/tailwind.css -o styles/style.css --minify",
+    "start": "nodemon --exec \"yarn dev:css && node server.js\""
+  }
 }
