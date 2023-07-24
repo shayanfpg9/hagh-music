@@ -1,11 +1,18 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>
-      HaghAdab Uploader - <%= page.charAt(0).toUpperCase() + page.slice(1) %>
-    </title>
-  </head>
-  <body>  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>
+    HaghAdab Uploader - <%= page.charAt(0).toUpperCase() + page.slice(1) %>
+  </title>
+</head>
+
+<body>
+  <%- include("sections/header.ejs" , {name: config.name} ) %>
+  <main class="absolute w-[90%] min-h-[calc(100vh-(100vh/6+1.5rem+5rem))] mt-[calc(100vh/6+0.5rem)] left-1/2 -translate-x-1/2 bg-rose-200 bg-opacity-50 rounded-3xl -z-20 pt-8 pb-4 px-4"><%- include(`actions/${page}.ejs`) %></main>
+  <%- include("sections/footer.ejs" , {version: config.version} ) %>
+</body>
+
 </html>
