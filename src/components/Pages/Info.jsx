@@ -14,31 +14,33 @@ export default function Info() {
           alt={music.id}
         />
 
-        <div className="w-full sm:w-1/2 pr-4 flex-1">
-          <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl my-2">
+        <div className="w-full sm:w-1/2 pr-4 flex-1 flex flex-wrap">
+          <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl my-2 w-full">
             {music.name}
           </h2>
-          <h3 className="mr-4 ">خواننده: {music.singer}</h3>
-          {music.year && <h4 className="mr-4 ">سال پخش: {music.year}</h4>}
+          <h3 className="mr-4 w-full">خواننده: {music.singer}</h3>
+          {music.year && (
+            <h4 className="mr-4 w-[40%]">سال پخش: {music.year}</h4>
+          )}
           {music.album && (
-            <h4 className="mr-4 py-1 ">
+            <h4 className="py-1 w-1/2">
               البوم:
               <Link
-                to={"/album/" + music.albumLink}
-                className="px-1 rounded-xl bg-rose-50"
+                to={music?.albumLink && "/album/" + music.albumLink}
+                className="mr-1 px-1 rounded-xl bg-rose-50"
               >
                 {music.album}
               </Link>
             </h4>
           )}
           {music.producer && (
-            <h5 className="mr-4 ">اهنگساز: {music.producer}</h5>
+            <h5 className="mr-4 w-full">اهنگساز: {music.producer}</h5>
           )}
           {music.mix && (
-            <h5 className="mr-4 ">میکس و مستر: {music.mix}</h5>
+            <h5 className="mr-4 w-full">میکس و مستر: {music.mix}</h5>
           )}
           {music.designer && (
-            <h5 className="mr-4 ">طراح کاور: {music.designer}</h5>
+            <h5 className="mr-4 w-full">طراح کاور: {music.designer}</h5>
           )}
         </div>
       </section>

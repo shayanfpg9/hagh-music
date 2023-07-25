@@ -15,7 +15,7 @@ export async function MusicLoader({ params }) {
   music.lyrics = await Import("lyrics.txt");
 
   if (music.album) {
-    music.albumLink = albums.find((album) => album.name === music.album).id;
+    music.albumLink = albums.find((album) => album.name === music.album)?.id;
   }
 
   if (music) {
