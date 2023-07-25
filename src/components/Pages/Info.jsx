@@ -20,10 +20,10 @@ export default function Info() {
           </h2>
           <h3 className="mr-4 w-full">خواننده: {music.singer}</h3>
           {music.year && (
-            <h4 className="mr-4 w-[40%]">سال پخش: {music.year}</h4>
+            <h4 className="mr-4 w-full sm:w-[40%]">سال پخش: {music.year}</h4>
           )}
           {music.album && (
-            <h4 className="py-1 w-1/2">
+            <h4 className="py-1 w-full max-sm:mr-4 sm:w-1/2">
               البوم:
               <Link
                 to={music?.albumLink && "/album/" + music.albumLink}
