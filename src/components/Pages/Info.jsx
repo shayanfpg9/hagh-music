@@ -54,7 +54,7 @@ export default function Info() {
 
       <br />
       <br />
-      <p className="mr-6 pb-[6rem] mt-20 to-rose-500">
+      <p className="mr-6 pb-[6rem] mt-20">
         {music.lyrics.split("\n").map((part, i) => (
           <span key={i}>
             {part}
