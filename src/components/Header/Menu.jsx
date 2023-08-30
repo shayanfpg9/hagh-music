@@ -10,6 +10,8 @@ import GithubImage from "../../assets/images/social/github.png";
 import { Link } from "react-router-dom";
 import { social, menu as large } from "../../assets/config/config.json";
 
+import banner from "../../assets/config/banner.json";
+
 export default function Menu() {
   const [isOpen, setState] = useContext(MenuContext);
   const menuItems = {
@@ -60,6 +62,14 @@ export default function Menu() {
         }
       >
         <menu className="flex justify-center items-center flex-wrap h-1/2 px-[2rem]">
+          <li onClick={ItemClick} className="w-[90%] py-4 absolute top-24 mx-4">
+            <Link to={banner.to} title={banner.name}>
+              <h3 className="text-2xl xl:text-3xl font-semibold text-rose-900 before:content-['★'] before:ml-2 hover:underline bg-rose-100 text-center p-4 rounded-xl">
+                {banner.name}
+              </h3>
+            </Link>
+          </li>
+
           {...menuItems.large.map((item, i) => (
             <li
               onClick={ItemClick}
@@ -71,7 +81,7 @@ export default function Menu() {
                 {...(!item.internal ? { target: "_blank" } : {})}
                 title={item.title || item.name}
               >
-                <h3 className="text-4xl lg:text-4xl xl:text-5xl font-semibold text-rose-900 before:content-['>'] before:ml-2 hover:before:mr-4 hover:underline hover:decoration-rose-900">
+                <h3 className="text-4xl xl:text-5xl font-semibold text-rose-900 before:content-['>'] before:ml-2 hover:before:mr-4 hover:underline">
                   {item.name}
                 </h3>
               </Link>
