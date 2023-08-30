@@ -31,7 +31,7 @@ export default function Albums() {
             alt={album.id}
           />
 
-          <div className="max-sm:mt-4 max-sm:w-full text-rose-800 font-semibold h-1/2 flex flex-wrap sm:pr-6 w-2/3">
+          <div className="max-sm:mt-4 max-sm:w-full text-rose-800 font-semibold h-1/2 flex-1 flex flex-wrap sm:pr-6 w-2/3">
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-6xl">
                 البوم {album.name}
@@ -39,26 +39,42 @@ export default function Albums() {
 
               {album.year && (
                 <h4 className="mt-2 mr-3 text-xl sm:text-xl lg:text-3xl">
-                  سال پخش: {album.year}
+                  سال پخش:
+                  <span className="text-base sm:text-lg lg:text-xl">
+                    {album.year}
+                  </span>
                 </h4>
               )}
               <h3 className="mt-2 mr-3 text-xl sm:text-xl lg:text-3xl">
-                خواننده: {album.singer}
+                خواننده:{" "}
+                <span className="text-base sm:text-lg lg:text-xl">
+                  {album.singer}
+                </span>
               </h3>
               {album.producer && (
                 <h5 className="mt-2 mr-3 text-xl sm:text-xl lg:text-3xl">
-                  اهنگساز: {album.producer}
+                  اهنگساز:
+                  <span className="text-base sm:text-lg lg:text-xl">
+                    {album.producer}
+                  </span>
                 </h5>
               )}
               {album.designer && (
                 <h5 className="mt-2 mr-3 text-xl sm:text-xl lg:text-3xl">
-                  طراح کاور: {album.designer}
+                  طراح کاور:
+                  <span className="text-base sm:text-lg lg:text-xl">
+                    {album.designer}
+                  </span>
                 </h5>
               )}
             </div>
 
             <button className="w-full mt-5 bg-rose-100 text-2xl p-4 rounded-2xl">
-              {album.InProgress ? "در حال ساخت..." : "درباره ی این البوم..."}
+              {album.InProgress === "both"
+                ? "در حال پخش..."
+                : album.InProgress
+                ? "در حال ساخت..."
+                : "درباره ی این البوم..."}
             </button>
           </div>
         </section>
