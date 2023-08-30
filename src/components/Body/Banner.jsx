@@ -45,12 +45,13 @@ export default function Banner() {
             <p className="text-2xl xl:text-3xl">{banner.short}</p>
           </div>
           <div className="flex flex-col justify-center items-center mb-8 w-full">
-            <button
-              onClick={() => setState(false)}
+            <Link
               className="bg-rose-50 w-[95%] p-8 rounded-xl my-4"
+              onClick={() => setState(false)}
+              to={banner.to}
             >
-              <Link to={banner.to}>{banner.button}</Link>
-            </button>
+              {banner.button}
+            </Link>
             <button
               onClick={() => setState(false)}
               className="bg-rose-50 w-[95%] p-8 rounded-xl my-4"

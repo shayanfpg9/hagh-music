@@ -14,7 +14,7 @@ import Body from "./Body/Body";
 import MenuContext from "../contexts/Menu";
 
 // Config:
-import { banner } from "../assets/config/config.json";
+import banner from "../assets/config/banner.json";
 import Banner from "./Body/Banner";
 
 export default function App(props) {
@@ -36,7 +36,7 @@ export default function App(props) {
 
   return (
     <>
-      {banner && <Banner />}
+      {banner.id && <Banner />}
       <MenuContext.Provider value={[isOpen, setMenuStatus]}>
         <Header />
         <Menu />
