@@ -62,13 +62,18 @@ export default function Menu() {
         }
       >
         <menu className="flex justify-center items-center flex-wrap h-1/2 px-[2rem]">
-          <li onClick={ItemClick} className="w-[90%] py-4 absolute top-24 mx-4">
-            <Link to={banner.to} title={banner.name}>
-              <h3 className="text-2xl xl:text-3xl font-semibold text-rose-900 before:content-['★'] before:ml-2 hover:underline bg-rose-100 text-center p-4 rounded-xl">
-                {banner.name}
-              </h3>
-            </Link>
-          </li>
+          {banner.id && (
+            <li
+              onClick={ItemClick}
+              className="w-[90%] py-4 absolute top-24 mx-4"
+            >
+              <Link to={banner.to} title={banner.name}>
+                <h3 className="text-2xl xl:text-3xl font-semibold text-rose-900 before:content-['★'] before:ml-2 hover:underline bg-rose-100 text-center p-4 rounded-xl">
+                  {banner.name}
+                </h3>
+              </Link>
+            </li>
+          )}
 
           {...menuItems.large.map((item, i) => (
             <li
