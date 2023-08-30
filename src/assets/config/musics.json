@@ -9,7 +9,10 @@
     "mix": "Flamein",
     "description": "دیلیت اثر مجرم",
     "year": "1402",
-    "keywords": ["دیلیت", "مجرم"]
+    "keywords": [
+      "دیلیت",
+      "مجرم"
+    ]
   },
   {
     "id": "roza-mojrem",
@@ -20,6 +23,110 @@
     "designer": "Mojrem",
     "description": "اهنگ روزا کاری از مجرم و اریا جی",
     "year": "1402",
-    "keywords": ["روزا", "اریا جی", "مجرم"]
-  }
+    "keywords": [
+      "روزا",
+      "اریا جی",
+      "مجرم"
+    ]
+  },
+  {
+    "id": "samourai-mojrem",
+    "name": "سامورایی",
+    "root": "assets/music/samourai-mojrem",
+    "album": "قصابی",
+    "singer": "Mojrem ft 11azg",
+    "mix": "Flamein",
+    "designer": "Nakazaki",
+    "description": "اینترو آلبوم قصابی",
+    "year": "1402",
+    "keywords": [
+      "اینتر",
+      "البوم قصابی"
+    ]
+  },
+  {
+    "id": "tanha2-mojrem",
+    "name": "تنها 2",
+    "root": "assets/music/tanha2-mojrem",
+    "album": "قصابی",
+    "singer": "Mojrem",
+    "mix": "Itahaer",
+    "designer": "Nakazaki",
+    "description": "تنها 2 از آلبوم قصابی",
+    "year": "1402",
+    "keywords": [
+      "البوم قصابی"
+    ]
+  },
+  {
+    "id": "saratan-ghalb-mojrem",
+    "name": "سرطان قلب",
+    "root": "assets/music/saratan-ghalb-mojrem",
+    "album": "قصابی",
+    "singer": "Mojrem ft Flip",
+    "mix": "Flamein",
+    "designer": "Nakazaki",
+    "description": "ترک سرطان قلب از آلبوم قصابی",
+    "year": "1402",
+    "keywords": [
+      "البوم قصابی"
+    ]
+  },
+  {
+    "id": "labe-sahel-mojrem",
+    "name": "لب ساحل",
+    "root": "assets/music/labe-sahel-mojrem",
+    "album": "قصابی",
+    "singer": "Mojrem ft Melody",
+    "mix": "Flamein",
+    "designer": "Nakazaki",
+    "description": "ترک  لب ساحل از آلبوم قصابی",
+    "year": "1402",
+    "keywords": [
+      "البوم قصابی"
+    ]
+  },
+  {
+    "id": "taas-mojrem-flamin",
+    "name": "تاس",
+    "root": "assets/music/taas-mojrem-flamin",
+    "album": "قصابی",
+    "singer": "Mojrem ft Flamin",
+    "mix": "Flamein",
+    "designer": "Nakazaki",
+    "description": "ترک  تاس از آلبوم قصابی",
+    "year": "1402",
+    "keywords": [
+      "البوم قصابی"
+    ]
+  },
+  {
+    "id": "sator-mojrem",
+    "name": "ساطور",
+    "root": "assets/music/sator-mojrem",
+    "album": "قصابی",
+    "singer": "Mojrem ft Etemad",
+    "producer":"11azg",
+    "mix": "Flamein",
+    "designer": "Nakazaki",
+    "description": "ترک  ساطور از آلبوم قصابی",
+    "year": "1402",
+    "keywords": [
+      "البوم قصابی"
+    ]
+  },
+  {
+    "id": "haghadab-mojrem",
+    "name": "حق ادب",
+    "root": "assets/music/haghadab-mojrem",
+    "album": "قصابی",
+    "singer": "Mojrem",
+    "mix": "Flamein",
+    "designer": "Nakazaki",
+    "description": "ترک  حق ادب از آلبوم قصابی",
+    "year": "1402",
+    "keywords": [
+      "البوم قصابی"
+    ]
+  } 
 ]

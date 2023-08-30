@@ -1,12 +1,16 @@
 [
   {
-    "id": "bot",
-    "name": "بت",
-    "producer": "11AZG, ARYAG, FLAMEIN",
-    "singer": "ITAHER, MOJREJ, ARYAG, 11AZG",
-    "designer": "MOJREJ",
+    "id": "ghasabi",
+    "name": "قصابی",
+    "producer": "Felamin",
+    "singer": "Mojrem, Melody, Etemad, Flip, 11azg, Felamin, lil MURPHZ, ITAHHR, Elia, M4HAN",
+    "designer": "Nakazaki",
     "year": 1402,
-    "InProgress": true,
-    "keywords": ["البوم", "بت"]
+    "InProgress": "both",
+    "keywords": [
+      "البوم",
+      "قصابی",
+      "دیس"
+    ]
   }
 ]
