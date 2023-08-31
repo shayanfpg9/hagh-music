@@ -36,6 +36,7 @@ app.get("/", (req, res) => {
   res.render("main", {
     page: "index",
     config: config,
+    data: {}
   });
 });
 
