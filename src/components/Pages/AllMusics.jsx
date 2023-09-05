@@ -2,8 +2,10 @@ import { json, useLoaderData, useNavigate } from "react-router-dom";
 import MusicsJson from "../../assets/config/musics.json";
 import PropTypes from "prop-types";
 
+const MusicsJsonReverse = MusicsJson.reverse()
+
 export function AllMusicsLoader({ params }) {
-  let filterd = MusicsJson;
+  let filterd = MusicsJsonReverse;
   if (params?.album) {
     filterd = MusicsJson.filter((v) => v.album === params.album);
   }
