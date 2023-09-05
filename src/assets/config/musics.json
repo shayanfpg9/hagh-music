@@ -106,7 +106,7 @@
     "root": "assets/music/sator-mojrem",
     "album": "قصابی",
     "singer": "Mojrem ft Etemad",
-    "producer":"11azg",
+    "producer": "11azg",
     "mix": "Flamein",
     "designer": "Nakazaki",
     "description": "ترک  ساطور از آلبوم قصابی",
@@ -128,5 +128,18 @@
     "keywords": [
       "البوم قصابی"
     ]
-  } 
+  },
+  {
+    "id": "dogane-mojrem-11azg",
+    "name": "دوگانه",
+    "root": "assets/music/dogane-mojrem-11azg",
+    "singer": "Mojrem ft 11azg",
+    "mix": "Flamein",
+    "designer": "Nakazaki",
+    "description": "ترک دوگانه در لیبل حق ادب",
+    "year": "1402",
+    "keywords": [
+      "دوگانه"
+    ]
+  }
 ]
